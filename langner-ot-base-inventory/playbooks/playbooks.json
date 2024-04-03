@@ -1,0 +1,661 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "ec77392f-2d0d-409c-a820-9f2c13b4ffb1",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "c8c2b491-9e37-4f59-b2d2-0c8bad32d0e1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "98dcf8ee-1ad8-4b94-8a17-bc48f439b0a4",
+              "@type": "WorkflowStep",
+              "name": "Get Devices List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "name": "",
+                  "locationid": "",
+                  "otsystemid": "",
+                  "otsystem": "",
+                  "ipaddress": "",
+                  "include": "",
+                  "networkid": "",
+                  "modified": "",
+                  "count": 300,
+                  "offset": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_devices_list",
+                "operationTitle": "Get Devices List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of devices from Langner OTbase Inventory based on the input parameters you have specified.",
+          "name": "Get Devices List",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c8c2b491-9e37-4f59-b2d2-0c8bad32d0e1",
+          "routes": [
+            {
+              "uuid": "b11c8f15-ffbb-4f35-a5e1-9ac50a5fe03a",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Devices List",
+              "sourceStep": "/api/3/workflow_steps/c8c2b491-9e37-4f59-b2d2-0c8bad32d0e1",
+              "targetStep": "/api/3/workflow_steps/98dcf8ee-1ad8-4b94-8a17-bc48f439b0a4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "33807c68-57ad-426e-b1f7-4e10b6f0cd5e",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "a22d3efb-0788-49b6-9dda-4bda167bc51e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "6523a7e2-b296-4069-8f32-9f897487114c",
+              "@type": "WorkflowStep",
+              "name": "Get Device Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "device_id": "",
+                  "include": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_device_details",
+                "operationTitle": "Get Device Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves an specific device information from Langner OTbase Inventory based on the device ID and include data you have specified.",
+          "name": "Get Device Details",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a22d3efb-0788-49b6-9dda-4bda167bc51e",
+          "routes": [
+            {
+              "uuid": "fa353fea-8544-4e0c-ac5c-1ab39813bee2",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Device Details",
+              "sourceStep": "/api/3/workflow_steps/a22d3efb-0788-49b6-9dda-4bda167bc51e",
+              "targetStep": "/api/3/workflow_steps/6523a7e2-b296-4069-8f32-9f897487114c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "bf0d30ca-b3f8-4948-967f-c2dd8fc16f8d",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "02c189a3-dfbc-4eb6-88f5-e9278e2d2602",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "ca852161-8e2e-4179-8e40-8803407f12b2",
+              "@type": "WorkflowStep",
+              "name": "Delete Device Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "device_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "delete_device_details",
+                "operationTitle": "Delete Device Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Deletes an specific device information from Langner OTbase Inventory based on the device ID you have specified.",
+          "name": "Delete Device Details",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/02c189a3-dfbc-4eb6-88f5-e9278e2d2602",
+          "routes": [
+            {
+              "uuid": "07c5414e-d8f4-4c40-b481-126d8d79ef0e",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Device Details",
+              "sourceStep": "/api/3/workflow_steps/02c189a3-dfbc-4eb6-88f5-e9278e2d2602",
+              "targetStep": "/api/3/workflow_steps/ca852161-8e2e-4179-8e40-8803407f12b2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9823f38a-3128-44c9-8401-777877d38b4d",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "1756f166-d471-43e5-82ed-0e7489d05f2e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "61b197ff-d385-4a2a-8d36-e59a69fb85ca",
+              "@type": "WorkflowStep",
+              "name": "Get Vulnerabilities List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "priority": "",
+                  "locationid": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_vulnerabilities_list",
+                "operationTitle": "Get Vulnerabilities List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of vulnerabilities from Langner OTbase Inventory based on the input parameters you have specified.",
+          "name": "Get Vulnerabilities List",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1756f166-d471-43e5-82ed-0e7489d05f2e",
+          "routes": [
+            {
+              "uuid": "ab088156-174f-4711-9a59-8b3a4f0482a0",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Vulnerabilities List",
+              "sourceStep": "/api/3/workflow_steps/1756f166-d471-43e5-82ed-0e7489d05f2e",
+              "targetStep": "/api/3/workflow_steps/61b197ff-d385-4a2a-8d36-e59a69fb85ca"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "69752e4b-6410-43e3-be6d-f97b7ea070e6",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "b455b481-2e61-4c8f-a12d-7de18746412d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "0fd5cf9f-8c60-4594-8d0f-da7e6a4ad375",
+              "@type": "WorkflowStep",
+              "name": "Get Vulnerability Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "cve_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_vulnerability_details",
+                "operationTitle": "Get Vulnerability Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves an specific vulnerability information from Langner OTbase Inventory based on the cve ID you have specified.",
+          "name": "Get Vulnerability Details",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b455b481-2e61-4c8f-a12d-7de18746412d",
+          "routes": [
+            {
+              "uuid": "0420299b-57ff-435f-92c9-0aa8f86b9a19",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Vulnerability Details",
+              "sourceStep": "/api/3/workflow_steps/b455b481-2e61-4c8f-a12d-7de18746412d",
+              "targetStep": "/api/3/workflow_steps/0fd5cf9f-8c60-4594-8d0f-da7e6a4ad375"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d6d3cd6e-f04d-4ba9-87f7-ea2bdbddb1a6",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "0355216f-adfa-4039-9a8a-da9846461722",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "d14d1a4b-4627-4f73-bc5e-ce7e434504d3",
+              "@type": "WorkflowStep",
+              "name": "Get Data Flow",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "last_seen": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_data_flow",
+                "operationTitle": "Get Data Flow"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of data flow from Langner OTbase Inventory based on the input parameter you have specified.",
+          "name": "Get Data Flow",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0355216f-adfa-4039-9a8a-da9846461722",
+          "routes": [
+            {
+              "uuid": "72f4268b-bc14-46a9-b5ad-356cb934b67f",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Data Flow",
+              "sourceStep": "/api/3/workflow_steps/0355216f-adfa-4039-9a8a-da9846461722",
+              "targetStep": "/api/3/workflow_steps/d14d1a4b-4627-4f73-bc5e-ce7e434504d3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "18f5e9e5-6e37-4eb5-8cc5-a978c852773a",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "f784abe1-74ba-4ba4-a60c-423610228052",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "31218c26-97d2-4b47-8055-a689804e6ef9",
+              "@type": "WorkflowStep",
+              "name": "Get Network List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "offset": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_network_list",
+                "operationTitle": "Get Network List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a list of networks from Langner OTbase Inventory based on the input parameter you have specified.",
+          "name": "Get Network List",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f784abe1-74ba-4ba4-a60c-423610228052",
+          "routes": [
+            {
+              "uuid": "eac50923-40d8-4c28-a460-399d8a9940ec",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Network List",
+              "sourceStep": "/api/3/workflow_steps/f784abe1-74ba-4ba4-a60c-423610228052",
+              "targetStep": "/api/3/workflow_steps/31218c26-97d2-4b47-8055-a689804e6ef9"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4923dadb-6deb-4590-8fb7-1fd3c7b19973",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "1ffc1e56-ed87-4f6a-a097-e56762a1299b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "56f338ff-a687-4a32-9d59-1230cca95221",
+              "@type": "WorkflowStep",
+              "name": "Get Network Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "network_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "get_network_details",
+                "operationTitle": "Get Network Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves an specific network information from Langner OTbase Inventory based on the network ID you have specified.",
+          "name": "Get Network Details",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1ffc1e56-ed87-4f6a-a097-e56762a1299b",
+          "routes": [
+            {
+              "uuid": "724d3166-adee-48a5-a495-5b1cde78c418",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Network Details",
+              "sourceStep": "/api/3/workflow_steps/1ffc1e56-ed87-4f6a-a097-e56762a1299b",
+              "targetStep": "/api/3/workflow_steps/56f338ff-a687-4a32-9d59-1230cca95221"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "aa173704-0414-42d1-a7f9-7987d4701ca6",
+          "collection": "/api/3/workflow_collections/2e158c32-5209-4c75-b1f8-366b7f50e1b4",
+          "steps": [
+            {
+              "uuid": "678a4489-e70b-43fb-9c68-23bff781a845",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "22c6b313-1faa-4d8c-b04f-8a24ce476f84",
+              "@type": "WorkflowStep",
+              "name": "Custom API Endpoint",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Langner OTbase Inventory",
+                "config": "",
+                "params": {
+                  "endpoint": "",
+                  "method": "GET",
+                  "body": ""
+                },
+                "version": "1.0.0",
+                "connector": "langner-ot-base-inventory",
+                "operation": "custom_endpoint",
+                "operationTitle": "Custom API Endpoint"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Allows querying a custom API endpoint in Langner OTbase Inventory based on the endpoint and request you have specified.",
+          "name": "Custom API Endpoint",
+          "tag": "#Langner OTbase Inventory",
+          "recordTags": [
+            "Langner",
+            "langner-ot-base-inventory"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/678a4489-e70b-43fb-9c68-23bff781a845",
+          "routes": [
+            {
+              "uuid": "f79210eb-6841-4e3e-b979-ea1c1253ae5b",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Custom API Endpoint",
+              "sourceStep": "/api/3/workflow_steps/678a4489-e70b-43fb-9c68-23bff781a845",
+              "targetStep": "/api/3/workflow_steps/22c6b313-1faa-4d8c-b04f-8a24ce476f84"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Langner OTbase Inventory - 1.0.0",
+      "description": "Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.",
+      "visible": true,
+      "recordTags": [
+        "Langner",
+        "langner-ot-base-inventory"
+      ]
+    }
+  ]
+}
