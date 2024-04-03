@@ -1,0 +1,412 @@
+{
+  "name": "langner-ot-base-inventory",
+  "label": "Langner OTbase Inventory",
+  "version": "1.0.0",
+  "description": "Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "OT & IoT Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": false,
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the URL of the Langner OTbase Inventory server to connect and perform automated operations.",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the URL of the Langner OTbase Inventory server to connect and perform automated operations."
+      },
+      {
+        "title": "Username",
+        "description": "Specify the username to access the Langner OTbase Inventory server to connect and perform automated operations.",
+        "type": "text",
+        "name": "username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the username to access the Langner OTbase Inventory server to connect and perform automated operations."
+      },
+      {
+        "title": "Password",
+        "description": "Specify the password to access the Langner OTbase Inventory server to connect and perform automated operations.",
+        "type": "password",
+        "name": "password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the password to access the Langner OTbase Inventory server to connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_devices_list",
+      "title": "Get Devices List",
+      "description": "Retrieves a list of devices from Langner OTbase Inventory based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_devices_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Device Name",
+          "description": "(Optional) Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "(Optional) Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory."
+        },
+        {
+          "title": "Location ID",
+          "description": "(Optional) Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "locationid",
+          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory."
+        },
+        {
+          "title": "OT System ID",
+          "description": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "otsystemid",
+          "tooltip": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
+        },
+        {
+          "title": "OT System Name",
+          "description": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "otsystem",
+          "tooltip": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
+        },
+        {
+          "title": "IP Address",
+          "description": "(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ipaddress",
+          "tooltip": "(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory."
+        },
+        {
+          "title": "Include Data",
+          "description": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "include",
+          "tooltip": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "options": [
+            "Software",
+            "Vulnerabilities",
+            "Compliance",
+            "Modules",
+            "Admins",
+            "All"
+          ]
+        },
+        {
+          "title": "Network ID",
+          "description": "(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "networkid",
+          "tooltip": "(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory."
+        },
+        {
+          "title": "Modified DateTime",
+          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "modified",
+          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp."
+        },
+        {
+          "title": "Limit",
+          "description": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 300.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "value": 300,
+          "tooltip": "(Optional) The maximum number of records to return. By default, this option is set as 300"
+        },
+        {
+          "title": "Offset",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0"
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_device_details",
+      "title": "Get Device Details",
+      "description": "Retrieves a specific device information from Langner OTbase Inventory based on the device ID and include data you have specified.",
+      "category": "investigation",
+      "annotation": "get_device_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "description": "Specify the ID of the device based on which you want to retrieve specific device details from Langner OTbase Inventory.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the device based on which you want to retrieve specific device details from Langner OTbase Inventory."
+        },
+        {
+          "title": "Include Data",
+          "description": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "include",
+          "tooltip": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "options": [
+            "Software",
+            "Vulnerabilities",
+            "Compliance",
+            "Modules",
+            "Admins",
+            "All"
+          ]
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "delete_device_details",
+      "title": "Delete Device Details",
+      "description": "Deletes an specific device information from Langner OTbase Inventory based on the device ID you have specified.",
+      "category": "investigation",
+      "annotation": "delete_device_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Device ID",
+          "name": "device_id",
+          "description": "Specify the ID of the device based on which you want to delete specific device details from Langner OTbase Inventory.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the device based on which you want to delete specific device details from Langner OTbase Inventory."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_vulnerabilities_list",
+      "title": "Get Vulnerabilities List",
+      "description": "Retrieves a list of vulnerabilities from Langner OTbase Inventory based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_vulnerabilities_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Priority",
+          "description": "(Optional) Select the priority of the vulnerabilities that this operation returns. You can choose from the following options: Critical, High, Medium, or Low.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "priority",
+          "tooltip": "(Optional) Select the priority of the vulnerabilities that this operation returns. You can choose from the following options: Critical, High, Medium, or Low.",
+          "options": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        {
+          "title": "Location ID",
+          "description": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "locationid",
+          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_vulnerability_details",
+      "title": "Get Vulnerability Details",
+      "description": "Retrieves a specific vulnerability information from Langner OTbase Inventory based on the CVE ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_vulnerability_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "CVE ID",
+          "name": "cve_id",
+          "description": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_data_flow",
+      "title": "Get Data Flow",
+      "description": "Retrieves a list of data flow from Langner OTbase Inventory based on the input parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_data_flow",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Last Seen",
+          "name": "last_seen",
+          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp.",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_network_list",
+      "title": "Get Network List",
+      "description": "Retrieves a list of networks from Langner OTbase Inventory based on the input parameter you have specified.",
+      "category": "investigation",
+      "annotation": "get_network_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Offset",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_network_details",
+      "title": "Get Network Details",
+      "description": "Retrieves a specific network information from Langner OTbase Inventory based on the network ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_network_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Network ID",
+          "name": "network_id",
+          "description": "Specify the ID of the network based on which you want to retrieve specific network details from Langner OTbase Inventory.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the network based on which you want to retrieve specific network details from Langner OTbase Inventory."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "custom_endpoint",
+      "title": "Custom API Endpoint",
+      "description": "Allows querying a custom API endpoint in Langner OTbase Inventory based on the endpoint and request you have specified.",
+      "category": "query",
+      "annotation": "custom_endpoint",
+      "output_schema": {},
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "API Endpoint",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "endpoint",
+          "placeholder": "https://<server_url>/ot-base/api/v1/hardware",
+          "description": "Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware.",
+          "tooltip": "Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware."
+        },
+        {
+          "title": "HTTP method",
+          "name": "method",
+          "description": "(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": "GET",
+          "options": [
+            "GET",
+            "POST"
+          ],
+          "tooltip": "(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST."
+        },
+        {
+          "title": "Request Parameters/Body",
+          "tooltip": "(Optional) Specify the 'Request Parameters' or the 'Request Body' that you want to send with the GET or POST API call respectively.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "body",
+          "placeholder": "{}",
+          "description": "(Optional) Specify the 'Request Parameters' or the 'Request Body' that you want to send with the GET or POST API call respectively."
+        }
+      ]
+    }
+  ]
+}
