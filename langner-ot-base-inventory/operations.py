@@ -22,14 +22,14 @@ class LangnerOTBase(object):
         self.password = config.get('password')
         url = config.get('server_url').strip('/')
         if not url.startswith('https://') and not url.startswith('http://'):
-            self.url = 'https://{0}/ot-base/api/v1/'.format(url)
+            self.base_url = 'https://{0}/ot-base/api/v1/'.format(url)
         else:
-            self.url = url + '/ot-base/api/v1/'
+            self.base_url = url + '/ot-base/api/v1/'
         self.verify_ssl = config.get('verify_ssl')
 
-    def make_rest_call(self, url, method, data=None, params=None):
+    def make_rest_call(self, endpoint, method, data=None, params=None):
         try:
-            url = self.url + url
+            url = self.base_url + endpoint
             logger.debug("Endpoint {0}".format(url))
             response = requests.request(method, url, data=data, params=params, auth=(self.username, self.password),
                                         headers=headers,
@@ -60,7 +60,7 @@ class LangnerOTBase(object):
 
 
 def check_payload(payload):
-    l = {}
+    result = {}
     for k, v in payload.items():
         if isinstance(v, dict):
             x = check_payload(v)
@@ -79,7 +79,7 @@ def check_payload(payload):
                 l[k] = p
         elif v is not None and v != '':
             l[k] = v
-    return l
+    return result
 
 
 def get_devices_list(config, params):

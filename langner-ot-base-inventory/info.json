@@ -67,63 +67,63 @@
       "parameters": [
         {
           "title": "Device Name",
-          "description": "Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "name",
-          "tooltip": "Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory."
         },
         {
           "title": "Location ID",
-          "description": "Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "locationid",
-          "tooltip": "Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory."
         },
         {
           "title": "OT System ID",
-          "description": "Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "otsystemid",
-          "tooltip": "Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
         },
         {
           "title": "OT System Name",
-          "description": "Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "otsystem",
-          "tooltip": "Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
         },
         {
           "title": "IP Address",
-          "description": "Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "ipaddress",
-          "tooltip": "Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory."
         },
         {
           "title": "Include Data",
-          "description": "Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "description": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "multiselect",
           "name": "include",
-          "tooltip": "Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "tooltip": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "options": [
             "Software",
             "Vulnerabilities",
@@ -135,45 +135,45 @@
         },
         {
           "title": "Network ID",
-          "description": "Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "networkid",
-          "tooltip": "Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory."
         },
         {
           "title": "Modified DateTime",
-          "description": "Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp.",
+          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "modified",
-          "tooltip": "Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp."
+          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp."
         },
         {
           "title": "Limit",
-          "description": "Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 300.",
+          "description": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 300.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "count",
           "value": 300,
-          "tooltip": "The maximum number of records to return. By default, this option is set as 300"
+          "tooltip": "(Optional) The maximum number of records to return. By default, this option is set as 300"
         },
         {
           "title": "Offset",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "offset",
           "value": 0,
-          "tooltip": "The number of detections to skip. By default, this option is set as 0"
+          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0"
         }
       ],
       "output_schema": {}
@@ -181,7 +181,7 @@
     {
       "operation": "get_device_details",
       "title": "Get Device Details",
-      "description": "Retrieves an specific device information from Langner OTbase Inventory based on the device ID and include data you have specified.",
+      "description": "Retrieves a specific device information from Langner OTbase Inventory based on the device ID and include data you have specified.",
       "category": "investigation",
       "annotation": "get_device_details",
       "enabled": true,
@@ -198,13 +198,13 @@
         },
         {
           "title": "Include Data",
-          "description": "Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "description": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "multiselect",
           "name": "include",
-          "tooltip": "Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "tooltip": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "options": [
             "Software",
             "Vulnerabilities",
@@ -248,13 +248,13 @@
       "parameters": [
         {
           "title": "Priority",
-          "description": "Select the priority of the vulnerabilities that this operation returns. You can choose from the following options: Critical, High, Medium, or Low.",
+          "description": "(Optional) Select the priority of the vulnerabilities that this operation returns. You can choose from the following options: Critical, High, Medium, or Low.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "multiselect",
           "name": "priority",
-          "tooltip": "Select the priority of the vulnerabilities that this operation returns. You can choose from the following options: Critical, High, Medium, or Low.",
+          "tooltip": "(Optional) Select the priority of the vulnerabilities that this operation returns. You can choose from the following options: Critical, High, Medium, or Low.",
           "options": [
             "Critical",
             "High",
@@ -264,13 +264,13 @@
         },
         {
           "title": "Location ID",
-          "description": "Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "locationid",
-          "tooltip": "Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory."
         }
       ],
       "output_schema": {}
@@ -278,7 +278,7 @@
     {
       "operation": "get_vulnerability_details",
       "title": "Get Vulnerability Details",
-      "description": "Retrieves an specific vulnerability information from Langner OTbase Inventory based on the cve ID you have specified.",
+      "description": "Retrieves a specific vulnerability information from Langner OTbase Inventory based on the CVE ID you have specified.",
       "category": "investigation",
       "annotation": "get_vulnerability_details",
       "enabled": true,
@@ -286,12 +286,12 @@
         {
           "title": "CVE ID",
           "name": "cve_id",
-          "description": "Specify the ID of the cve based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory.",
+          "description": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the cve based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory."
+          "tooltip": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory."
         }
       ],
       "output_schema": {}
@@ -307,12 +307,12 @@
         {
           "title": "Last Seen",
           "name": "last_seen",
-          "description": "Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp.",
+          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp.",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp."
+          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp."
         }
       ],
       "output_schema": {}
@@ -327,14 +327,14 @@
       "parameters": [
         {
           "title": "Offset",
-          "description": "Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "offset",
           "value": 0,
-          "tooltip": "The number of detections to skip. By default, this option is set as 0."
+          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0."
         }
       ],
       "output_schema": {}
@@ -342,7 +342,7 @@
     {
       "operation": "get_network_details",
       "title": "Get Network Details",
-      "description": "Retrieves an specific network information from Langner OTbase Inventory based on the network ID you have specified.",
+      "description": "Retrieves a specific network information from Langner OTbase Inventory based on the network ID you have specified.",
       "category": "investigation",
       "annotation": "get_network_details",
       "enabled": true,
@@ -383,7 +383,7 @@
         {
           "title": "HTTP method",
           "name": "method",
-          "description": "Select the HTTP method to be used for the API call. You can choose between GET or POST.",
+          "description": "(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST.",
           "type": "select",
           "visible": true,
           "editable": true,
@@ -393,7 +393,7 @@
             "GET",
             "POST"
           ],
-          "tooltip": "Select the HTTP method to be used for the API call. You can choose between GET or POST."
+          "tooltip": "(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST."
         },
         {
           "title": "Request Parameters/Body",
