@@ -2,6 +2,7 @@
 
 Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.
 <p>This document provides information about the Langner OTbase Inventory Connector, which facilitates automated interactions, with a Langner OTbase Inventory server using FortiSOAR&trade; playbooks. Add the Langner OTbase Inventory Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Langner OTbase Inventory.</p>
+
 ### Version information
 
 Connector Version: 1.0.0
