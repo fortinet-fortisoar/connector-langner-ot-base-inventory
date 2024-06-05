@@ -587,54 +587,6 @@
           "origin": ""
         }
       }
-    },
-    {
-      "operation": "custom_endpoint",
-      "title": "Custom API Endpoint",
-      "description": "Allows querying a custom API endpoint in Langner OTbase Inventory based on the endpoint and request you have specified.",
-      "category": "query",
-      "annotation": "custom_endpoint",
-      "output_schema": {},
-      "enabled": true,
-      "parameters": [
-        {
-          "title": "API Endpoint",
-          "required": true,
-          "editable": true,
-          "visible": true,
-          "type": "text",
-          "name": "endpoint",
-          "placeholder": "hardware",
-          "description": "Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware.",
-          "tooltip": "Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware."
-        },
-        {
-          "title": "HTTP method",
-          "name": "method",
-          "description": "(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST.",
-          "type": "select",
-          "visible": true,
-          "editable": true,
-          "required": false,
-          "value": "GET",
-          "options": [
-            "GET",
-            "POST"
-          ],
-          "tooltip": "(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST."
-        },
-        {
-          "title": "Request Parameters/Body",
-          "tooltip": "(Optional) Specify the 'Request Parameters' or the 'Request Body' that you want to send with the GET or POST API call respectively.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "type": "json",
-          "name": "body",
-          "placeholder": "{}",
-          "description": "(Optional) Specify the 'Request Parameters' or the 'Request Body' that you want to send with the GET or POST API call respectively."
-        }
-      ]
     }
   ]
 }

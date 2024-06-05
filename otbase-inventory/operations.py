@@ -178,20 +178,20 @@ def get_network_details(config, params):
     response = lan.make_rest_call(endpoint, 'GET')
     return response
 
-
-def custom_endpoint(config, params):
-    lan = OTBase(config)
-    endpoint = params.pop('endpoint')
-    method = params.pop('method')
-    body = params.pop('body')
-    if method == "GET":
-        payload = body
-        data = None
-    else:
-        data = json.dumps(body)
-        payload = None
-    response = lan.make_rest_call(endpoint, method=method, params=payload, data=data)
-    return response
+# Not needed in this version
+# def custom_endpoint(config, params):
+#     lan = OTBase(config)
+#     endpoint = params.pop('endpoint')
+#     method = params.pop('method')
+#     body = params.pop('body')
+#     if method == "GET":
+#         payload = body
+#         data = None
+#     else:
+#         data = json.dumps(body)
+#         payload = None
+#     response = lan.make_rest_call(endpoint, method=method, params=payload, data=data)
+#     return response
 
 
 def _check_health(config):
@@ -210,6 +210,5 @@ operations = {
     'get_vulnerability_details': get_vulnerability_details,
     'get_data_flow': get_data_flow,
     'get_network_list': get_network_list,
-    'get_network_details': get_network_details,
-    'custom_endpoint': custom_endpoint
+    'get_network_details': get_network_details
 }

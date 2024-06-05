@@ -1,6 +1,6 @@
 ## About the connector
 Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.
-<p>This document provides information about the Langner OTbase Inventory Connector, which facilitates automated interactions, with a Langner OTbase Inventory server using FortiSOAR&trade; playbooks. Add the Langner OTbase Inventory Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Langner OTbase Inventory.</p>
+<p>This document provides information about the OTbase Inventory Connector, which facilitates automated interactions, with a OTbase Inventory server using FortiSOAR&trade; playbooks. Add the OTbase Inventory Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with OTbase Inventory.</p>
 ### Version information
 
 Connector Version: 1.0.0
@@ -11,11 +11,11 @@ Authored By: Fortinet
 Certified: No
 ## Installing the connector
 <p>Use the <strong>Content Hub</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.</p><p>You can also use the <code>yum</code> command as a root user to install the connector:</p>
-<pre>yum install cyops-connector-langner-ot-base-inventory</pre>
+<pre>yum install cyops-connector-otbase-inventory</pre>
 
 ## Prerequisites to configuring the connector
-- You must have the credentials of Langner OTbase Inventory server to which you will connect and perform automated operations.
-- The FortiSOAR&trade; server should have outbound connectivity to port 443 on the Langner OTbase Inventory server.
+- You must have the credentials of OTbase Inventory server to which you will connect and perform automated operations.
+- The FortiSOAR&trade; server should have outbound connectivity to port 443 on the OTbase Inventory server.
 
 ## Minimum Permissions Required
 - Not applicable
@@ -23,14 +23,14 @@ Certified: No
 ## Configuring the connector
 For the procedure to configure a connector, click [here](https://docs.fortinet.com/document/fortisoar/0.0.0/configuring-a-connector/1/configuring-a-connector)
 ### Configuration parameters
-<p>In FortiSOAR&trade;, on the Connectors page, click the <strong>Langner OTbase Inventory</strong> connector row (if you are in the <strong>Grid</strong> view on the Connectors page) and in the <strong>Configurations</strong> tab enter the required configuration details:</p>
+<p>In FortiSOAR&trade;, on the Connectors page, click the <strong>OTbase Inventory</strong> connector row (if you are in the <strong>Grid</strong> view on the Connectors page) and in the <strong>Configurations</strong> tab enter the required configuration details:</p>
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Server URL</td><td>Specify the URL of the Langner OTbase Inventory server to connect and perform automated operations.
 </td>
 </tr><tr><td>Username</td><td>Specify the username to access the Langner OTbase Inventory server to connect and perform automated operations.
 </td>
 </tr><tr><td>Password</td><td>Specify the password to access the Langner OTbase Inventory server to connect and perform automated operations.
 </td>
-</tr><tr><td>PFX Path</td><td>Specify the path to PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations.
+</tr><tr><td>PFX Path</td><td>Specify the path to PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}
 </td>
 </tr><tr><td>PFX Password</td><td>Specify the password of PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations.
 </td>
@@ -46,7 +46,6 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Get Data Flow</td><td>Retrieves a list of data flow from Langner OTbase Inventory based on the input parameter you have specified.</td><td>get_data_flow <br/>Investigation</td></tr>
 <tr><td>Get Network List</td><td>Retrieves a list of networks from Langner OTbase Inventory based on the input parameter you have specified.</td><td>get_network_list <br/>Investigation</td></tr>
 <tr><td>Get Network Details</td><td>Retrieves a specific network information from Langner OTbase Inventory based on the network ID you have specified.</td><td>get_network_details <br/>Investigation</td></tr>
-<tr><td>Custom API Endpoint</td><td>Allows querying a custom API endpoint in Langner OTbase Inventory based on the endpoint and request you have specified.</td><td>custom_endpoint <br/>Query</td></tr>
 </tbody></table>
 ### operation: Get Devices List
 #### Input parameters
@@ -57,7 +56,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>IP Address</td><td>(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory.
 </td></tr><tr><td>Include Data</td><td>(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.
 </td></tr><tr><td>Network ID</td><td>(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory.
-</td></tr><tr><td>Modified DateTime</td><td>(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp.
+</td></tr><tr><td>Modified DateTime</td><td>(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp. Ex: 2024-04-18 19:12:59
 </td></tr><tr><td>Limit</td><td>(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 300.
 </td></tr><tr><td>Offset</td><td>(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.
 </td></tr></tbody></table>
@@ -330,19 +329,9 @@ The output contains the following populated JSON schema:
         "origin": ""
     }
 }</pre>
-### operation: Custom API Endpoint
-#### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>API Endpoint</td><td>Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware.
-</td></tr><tr><td>HTTP method</td><td>(Optional) Select the HTTP method to be used for the API call. You can choose between GET or POST.
-</td></tr><tr><td>Request Parameters/Body</td><td>(Optional) Specify the 'Request Parameters' or the 'Request Body' that you want to send with the GET or POST API call respectively.
-</td></tr></tbody></table>
-#### Output
-
- The output contains a non-dictionary value.
 ## Included playbooks
-The `Sample - langner-ot-base-inventory - 1.0.0` playbook collection comes bundled with the Langner OTbase Inventory connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Langner OTbase Inventory connector.
+The `Sample - otbase-inventory - 1.0.0` playbook collection comes bundled with the OTbase Inventory connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the OTbase Inventory connector.
 
-- Custom API Endpoint
 - Delete Device Details
 - Get Data Flow
 - Get Device Details
