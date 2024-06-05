@@ -1,6 +1,6 @@
 {
-  "name": "langner-ot-base-inventory",
-  "label": "Langner OTbase Inventory",
+  "name": "otbase-inventory",
+  "label": "OTbase Inventory",
   "version": "1.0.0",
   "description": "Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.",
   "publisher": "Fortinet",
@@ -10,7 +10,7 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
-  "help_online": "https://github.com/fortinet-fortisoar/connector-langner-ot-base-inventory/blob/release/1.0.0/docs/LangnerOTBase.md",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-otbase-inventory/blob/release/1.0.0/docs/OTBase.md",
   "configuration": {
     "fields": [
       {
@@ -44,15 +44,35 @@
         "tooltip": "Specify the password to access the Langner OTbase Inventory server to connect and perform automated operations."
       },
       {
+        "title": "PFX Path",
+        "description": "Specify the path to PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}",
+        "type": "text",
+        "name": "pfx_path",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the path to PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}"
+      },
+      {
+        "title": "PFX Password",
+        "description": "Specify the password of PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations.",
+        "type": "password",
+        "name": "pfx_password",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the password of PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations."
+      },
+      {
         "title": "Verify SSL",
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as False.",
         "name": "verify_ssl",
         "type": "checkbox",
         "required": false,
         "editable": true,
         "visible": true,
-        "value": true,
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+        "value": false,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as False."
       }
     ]
   },
@@ -145,13 +165,13 @@
         },
         {
           "title": "Modified DateTime",
-          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp.",
+          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp. Ex: 2024-04-18 19:12:59",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "modified",
-          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp."
+          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp. Ex 2024-04-18 19:12:59"
         },
         {
           "title": "Limit",
@@ -176,7 +196,71 @@
           "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0"
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": [
+          {
+            "name": "",
+            "tags": [],
+            "zone": "",
+            "stage": "",
+            "safety": "",
+            "context": {
+              "location": "",
+              "otSystem": "",
+              "processes": [
+                {
+                  "name": "",
+                  "location": "",
+                  "locationId": ""
+                }
+              ],
+              "locationId": "",
+              "otSystemId": "",
+              "deviceGroup": "",
+              "referenceLocation": "",
+              "referenceLocationId": ""
+            },
+            "release": "",
+            "deviceId": "",
+            "exposure": "",
+            "hardware": {
+              "type": "",
+              "model": "",
+              "vendor": "",
+              "version": "",
+              "endOfLife": "",
+              "lifecycle": "",
+              "vendorLink": "",
+              "description": "",
+              "orderNumber": ""
+            },
+            "hostedOn": "",
+            "modified": "",
+            "monitors": [],
+            "warranty": "",
+            "deviceRef": "",
+            "last_seen": "",
+            "connections": [],
+            "criticality": "",
+            "description": "",
+            "os_firmware": "",
+            "last_seen_by": "",
+            "serialNumber": "",
+            "documentation": "",
+            "last_patch_date": "",
+            "manufactureDate": "",
+            "installationDate": "",
+            "days_since_last_patch": ""
+          }
+        ],
+        "info": {
+          "user": "",
+          "total": "",
+          "offset": "",
+          "origin": "",
+          "next_offset": ""
+        }
+      }
     },
     {
       "operation": "get_device_details",
@@ -215,7 +299,66 @@
           ]
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": {
+          "name": "",
+          "tags": [],
+          "zone": "",
+          "stage": "",
+          "safety": "",
+          "context": {
+            "location": "",
+            "otSystem": "",
+            "processes": [
+              {
+                "name": "",
+                "location": "",
+                "locationId": ""
+              }
+            ],
+            "locationId": "",
+            "otSystemId": "",
+            "deviceGroup": "",
+            "referenceLocation": "",
+            "referenceLocationId": ""
+          },
+          "release": "",
+          "deviceId": "",
+          "exposure": "",
+          "hardware": {
+            "type": "",
+            "model": "",
+            "vendor": "",
+            "version": "",
+            "endOfLife": "",
+            "lifecycle": "",
+            "vendorLink": "",
+            "description": "",
+            "orderNumber": ""
+          },
+          "hostedOn": "",
+          "modified": "",
+          "monitors": [],
+          "warranty": "",
+          "deviceRef": "",
+          "last_seen": "",
+          "connections": [],
+          "criticality": "",
+          "description": "",
+          "os_firmware": "",
+          "last_seen_by": "",
+          "serialNumber": "",
+          "documentation": "",
+          "last_patch_date": "",
+          "manufactureDate": "",
+          "installationDate": "",
+          "days_since_last_patch": ""
+        },
+        "info": {
+          "user": "",
+          "origin": ""
+        }
+      }
     },
     {
       "operation": "delete_device_details",
@@ -273,7 +416,28 @@
           "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": [
+          {
+            "kev": "",
+            "cveId": "",
+            "vector": "",
+            "devices": [],
+            "priority": "",
+            "severity": "",
+            "baseScore": "",
+            "description": "",
+            "datePublished": ""
+          }
+        ],
+        "info": {
+          "user": "",
+          "total": "",
+          "offset": "",
+          "origin": "",
+          "next_offset": ""
+        }
+      }
     },
     {
       "operation": "get_vulnerability_details",
@@ -294,7 +458,23 @@
           "tooltip": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": {
+          "kev": "",
+          "cveId": "",
+          "vector": "",
+          "devices": [],
+          "priority": "",
+          "severity": "",
+          "baseScore": "",
+          "description": "",
+          "datePublished": ""
+        },
+        "info": {
+          "user": "",
+          "origin": ""
+        }
+      }
     },
     {
       "operation": "get_data_flow",
@@ -315,7 +495,15 @@
           "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": [],
+        "info": {
+          "user": "",
+          "total": "",
+          "offset": "",
+          "origin": ""
+        }
+      }
     },
     {
       "operation": "get_network_list",
@@ -337,7 +525,29 @@
           "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": [
+          {
+            "name": "",
+            "type": "",
+            "vlan": "",
+            "group": "",
+            "address": "",
+            "location": "",
+            "networkId": "",
+            "groupColor": "",
+            "locationId": "",
+            "description": "",
+            "reserved_addresses": []
+          }
+        ],
+        "info": {
+          "user": "",
+          "total": "",
+          "offset": "",
+          "origin": ""
+        }
+      }
     },
     {
       "operation": "get_network_details",
@@ -358,7 +568,25 @@
           "tooltip": "Specify the ID of the network based on which you want to retrieve specific network details from Langner OTbase Inventory."
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": {
+          "name": "",
+          "type": "",
+          "vlan": "",
+          "group": "",
+          "address": "",
+          "location": "",
+          "networkId": "",
+          "groupColor": "",
+          "locationId": "",
+          "description": "",
+          "reserved_addresses": []
+        },
+        "info": {
+          "user": "",
+          "origin": ""
+        }
+      }
     },
     {
       "operation": "custom_endpoint",
@@ -376,7 +604,7 @@
           "visible": true,
           "type": "text",
           "name": "endpoint",
-          "placeholder": "https://<server_url>/ot-base/api/v1/hardware",
+          "placeholder": "hardware",
           "description": "Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware.",
           "tooltip": "Specify the API Endpoint using which you want to make the API call. NOTE: The API endpoint for Langner OTbase Inventory must be specified in the following format: https://<server_url>/ot-base/api/v1/hardware."
         },
