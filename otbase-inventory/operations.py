@@ -5,10 +5,13 @@ Copyright (c) 2024 Fortinet Inc
 Copyright end
 """
 
-import requests, json
+import json
+
+import requests
+import requests_pkcs12
 from connectors.core.connector import ConnectorError, get_logger
 
-logger = get_logger('langner-ot-base-inventory')
+logger = get_logger("otbase-inventory")
 
 headers = {
     'Accept': 'application/json',
@@ -16,10 +19,13 @@ headers = {
 }
 
 
-class LangnerOTBase(object):
+class OTBase(object):
     def __init__(self, config, *args, **kwargs):
         self.username = config.get('username')
         self.password = config.get('password')
+        if config.get('pfx_path') is not None:
+            self.pfx_path = config.get('pfx_path')
+            self.pfx_password = config.get('pfx_password')
         url = config.get('server_url').strip('/')
         if not url.startswith('https://') and not url.startswith('http://'):
             self.base_url = 'https://{0}/ot-base/api/v1/'.format(url)
@@ -31,10 +37,24 @@ class LangnerOTBase(object):
         try:
             url = self.base_url + endpoint
             logger.debug("Endpoint {0}".format(url))
-            response = requests.request(method, url, data=data, params=params, auth=(self.username, self.password),
-                                        headers=headers,
-                                        verify=self.verify_ssl)
-            logger.debug("response_content {0}:{1}".format(response.status_code, response.content))
+            # CURL UTILS CODE
+            try:
+                from connectors.debug_utils.curl_script import make_curl
+                make_curl(method, url, headers=headers, params=params, data=data, verify_ssl=self.verify_ssl)
+            except Exception as err:
+                logger.error(f"Error in curl utils: {str(err)}")
+
+            if self.pfx_path is not None:
+                response = requests_pkcs12.request(url=url,
+                                                   method=method, auth=(self.username, self.password),
+                                                   pkcs12_filename=self.pfx_path,
+                                                   pkcs12_password=self.pfx_password,
+                                                   verify=self.verify_ssl, data=data, params=params, headers=headers)
+            else:
+                response = requests.request(method, url, data=data, params=params, auth=(self.username, self.password),
+                                            headers=headers,
+                                            verify=self.verify_ssl)
+            # logger.debug("response_content {0}:{1}".format(response.status_code, response.content))
             if response.ok or response.status_code == 204:
                 logger.info('Successfully got response for url {0}'.format(url))
                 if 'json' in str(response.headers):
@@ -83,7 +103,7 @@ def check_payload(payload):
 
 
 def get_devices_list(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'devices'
     include = params.get('include')
     if include:
@@ -96,7 +116,7 @@ def get_devices_list(config, params):
 
 
 def get_device_details(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'devices/{0}'.format(params.get('device_id'))
     include = params.get('include')
     if include:
@@ -109,7 +129,7 @@ def get_device_details(config, params):
 
 
 def delete_device_details(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'devices/{0}'.format(params.get('device_id'))
     response = lan.make_rest_call(endpoint, 'DELETE')
     if response:
@@ -117,7 +137,7 @@ def delete_device_details(config, params):
 
 
 def get_vulnerabilities_list(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'vulnerabilities'
     priority = params.get('priority')
     if priority:
@@ -130,14 +150,14 @@ def get_vulnerabilities_list(config, params):
 
 
 def get_vulnerability_details(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'vulnerabilities/{0}'.format(params.get('cve_id'))
     response = lan.make_rest_call(endpoint, 'GET')
     return response
 
 
 def get_data_flow(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'dataflow'
     payload = check_payload(params)
     response = lan.make_rest_call(endpoint, 'GET', params=payload)
@@ -145,7 +165,7 @@ def get_data_flow(config, params):
 
 
 def get_network_list(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'networks'
     payload = check_payload(params)
     response = lan.make_rest_call(endpoint, 'GET', params=payload)
@@ -153,36 +173,33 @@ def get_network_list(config, params):
 
 
 def get_network_details(config, params):
-    lan = LangnerOTBase(config)
+    lan = OTBase(config)
     endpoint = 'networks/{0}'.format(params.get('network_id'))
     response = lan.make_rest_call(endpoint, 'GET')
     return response
 
-
-def custom_endpoint(config, params):
-    endpoint = params.get('endpoint')
-    body = params.get('body')
-    method = params.get('method')
-    if method == "GET":
-        payload = check_payload(body)
-        data = None
-    else:
-        data = json.dumps(check_payload(body))
-        payload = None
-    response = requests.request(method=method, url=endpoint, auth=(config.get('username'), config.get('password')),
-                                headers=headers, params=payload, data=data, verify=config.get('verify_ssl'))
-    return response.json()
+# Not needed in this version
+# def custom_endpoint(config, params):
+#     lan = OTBase(config)
+#     endpoint = params.pop('endpoint')
+#     method = params.pop('method')
+#     body = params.pop('body')
+#     if method == "GET":
+#         payload = body
+#         data = None
+#     else:
+#         data = json.dumps(body)
+#         payload = None
+#     response = lan.make_rest_call(endpoint, method=method, params=payload, data=data)
+#     return response
 
 
 def _check_health(config):
     try:
-        response = get_devices_list(config, params={})
-        if response.ok:
-            return True
-        else:
-            raise ConnectorError('Invalid Credentials!')
+        get_devices_list(config, params={})
+        return True
     except Exception as err:
-        raise ConnectorError('Invalid Credentials!')
+        raise ConnectorError(f'Error in Check Health {err}')
 
 
 operations = {
@@ -193,6 +210,5 @@ operations = {
     'get_vulnerability_details': get_vulnerability_details,
     'get_data_flow': get_data_flow,
     'get_network_list': get_network_list,
-    'get_network_details': get_network_details,
-    'custom_endpoint': custom_endpoint
+    'get_network_details': get_network_details
 }

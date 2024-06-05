@@ -6,12 +6,13 @@ Copyright end
 """
 
 from connectors.core.connector import Connector, get_logger, ConnectorError
+
 from .operations import operations, _check_health
 
-logger = get_logger("langner-ot-base-inventory")
+logger = get_logger("otbase-inventory")
 
 
-class LangnerOTBaseInventory(Connector):
+class OTBaseInventory(Connector):
     def execute(self, config, operation, params, **kwargs):
         logger.debug("Invoking {0} Operation".format(operation))
         try:
