@@ -3,7 +3,7 @@ Enterprise-grade OT asset management software. OTbase is the gold standard for l
 <p>This document provides information about the OTbase Inventory Connector, which facilitates automated interactions, with a OTbase Inventory server using FortiSOAR&trade; playbooks. Add the OTbase Inventory Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with OTbase Inventory.</p>
 ### Version information
 
-Connector Version: 1.0.0
+Connector Version: 1.0.1
 
 
 Authored By: Fortinet
@@ -330,7 +330,7 @@ The output contains the following populated JSON schema:
     }
 }</pre>
 ## Included playbooks
-The `Sample - otbase-inventory - 1.0.0` playbook collection comes bundled with the OTbase Inventory connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the OTbase Inventory connector.
+The `Sample - otbase-inventory - 1.0.1` playbook collection comes bundled with the OTbase Inventory connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the OTbase Inventory connector.
 
 - Delete Device Details
 - Get Data Flow

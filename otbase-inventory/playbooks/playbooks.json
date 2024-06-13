@@ -2,16 +2,16 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "2999e503-cf27-4971-9072-d83295c1bd66",
+      "uuid": "0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
       "@type": "WorkflowCollection",
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "fb3522c1-08a8-4796-be9c-cae457e10735",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "274118f5-d574-41a8-9a62-d366f0ed5d3b",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "fae0991f-07b2-4e56-afe8-789b347e6de7",
+              "uuid": "d32ef278-88b5-444b-a3e0-01e4a6ba4698",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -28,7 +28,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "af05ee8c-4be7-4c9a-af22-997bb9faa336",
+              "uuid": "eda95911-5d5d-4b52-9f2e-433b40fcb222",
               "@type": "WorkflowStep",
               "name": "Get Devices List",
               "description": null,
@@ -48,7 +48,7 @@
                   "count": 300,
                   "offset": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_devices_list",
                 "operationTitle": "Get Devices List"
@@ -71,26 +71,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/fae0991f-07b2-4e56-afe8-789b347e6de7",
+          "triggerStep": "/api/3/workflow_steps/d32ef278-88b5-444b-a3e0-01e4a6ba4698",
           "routes": [
             {
-              "uuid": "b270f4c5-a071-400d-8787-93a3be9b7904",
+              "uuid": "bc7cc6c3-9e8e-4730-bcec-02aa574dd0cf",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Devices List",
-              "sourceStep": "/api/3/workflow_steps/fae0991f-07b2-4e56-afe8-789b347e6de7",
-              "targetStep": "/api/3/workflow_steps/af05ee8c-4be7-4c9a-af22-997bb9faa336"
+              "sourceStep": "/api/3/workflow_steps/d32ef278-88b5-444b-a3e0-01e4a6ba4698",
+              "targetStep": "/api/3/workflow_steps/eda95911-5d5d-4b52-9f2e-433b40fcb222"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "6cbf1ea8-5912-48bb-824c-75dbcb58aff6",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "88cbe485-8dbe-4342-a7da-c0971a7cc492",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "0cf066d6-72c4-4a56-9113-9c0b9401f1e3",
+              "uuid": "077eeddc-6c08-4dda-b325-7894f5f3c89d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -107,7 +107,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "216797c9-2558-427d-b9ce-3d700bae7191",
+              "uuid": "17841835-d7ed-458b-b6a9-1e268e3e6eb5",
               "@type": "WorkflowStep",
               "name": "Get Device Details",
               "description": null,
@@ -119,7 +119,7 @@
                   "device_id": "",
                   "include": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_device_details",
                 "operationTitle": "Get Device Details"
@@ -142,26 +142,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/0cf066d6-72c4-4a56-9113-9c0b9401f1e3",
+          "triggerStep": "/api/3/workflow_steps/077eeddc-6c08-4dda-b325-7894f5f3c89d",
           "routes": [
             {
-              "uuid": "d900f055-52f8-4b6c-a5d3-513e977d12ac",
+              "uuid": "75e8f496-99fd-4a05-a409-8773e3a3e10e",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Device Details",
-              "sourceStep": "/api/3/workflow_steps/0cf066d6-72c4-4a56-9113-9c0b9401f1e3",
-              "targetStep": "/api/3/workflow_steps/216797c9-2558-427d-b9ce-3d700bae7191"
+              "sourceStep": "/api/3/workflow_steps/077eeddc-6c08-4dda-b325-7894f5f3c89d",
+              "targetStep": "/api/3/workflow_steps/17841835-d7ed-458b-b6a9-1e268e3e6eb5"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f6c793a7-153c-45f2-96c4-2f7efa1c4d32",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "5edcb293-d18f-498e-b355-e8831f096149",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "f79a4eba-a3ec-4471-b135-c69c7dcbd234",
+              "uuid": "cd6ee648-1914-47d2-8c1c-39412dd6e356",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -178,7 +178,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "b54386b1-273a-4e34-b6c4-28a557d4fc7e",
+              "uuid": "f86dcc0d-8859-45ff-87dd-0adb8db731e5",
               "@type": "WorkflowStep",
               "name": "Delete Device Details",
               "description": null,
@@ -189,7 +189,7 @@
                 "params": {
                   "device_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "delete_device_details",
                 "operationTitle": "Delete Device Details"
@@ -212,26 +212,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/f79a4eba-a3ec-4471-b135-c69c7dcbd234",
+          "triggerStep": "/api/3/workflow_steps/cd6ee648-1914-47d2-8c1c-39412dd6e356",
           "routes": [
             {
-              "uuid": "d2ffab4b-f99c-4977-a7f2-2e36e6cfdda1",
+              "uuid": "7dac1247-50d3-4c9e-8688-8577c1f9351d",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Device Details",
-              "sourceStep": "/api/3/workflow_steps/f79a4eba-a3ec-4471-b135-c69c7dcbd234",
-              "targetStep": "/api/3/workflow_steps/b54386b1-273a-4e34-b6c4-28a557d4fc7e"
+              "sourceStep": "/api/3/workflow_steps/cd6ee648-1914-47d2-8c1c-39412dd6e356",
+              "targetStep": "/api/3/workflow_steps/f86dcc0d-8859-45ff-87dd-0adb8db731e5"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "3f385ff9-2fde-4009-852a-01587fdd6d03",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "305a48a2-e209-4c73-adf0-e9980462481e",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "c16cd6e2-c58c-4b10-a09c-6827a2018ac1",
+              "uuid": "3291a74a-cf3a-4080-82b3-4988730cede2",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -248,7 +248,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "84441961-83e7-4556-875a-390750692173",
+              "uuid": "b3ce1749-29ff-41e1-889c-0387421dc2d8",
               "@type": "WorkflowStep",
               "name": "Get Vulnerabilities List",
               "description": null,
@@ -260,7 +260,7 @@
                   "priority": "",
                   "locationid": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_vulnerabilities_list",
                 "operationTitle": "Get Vulnerabilities List"
@@ -283,26 +283,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c16cd6e2-c58c-4b10-a09c-6827a2018ac1",
+          "triggerStep": "/api/3/workflow_steps/3291a74a-cf3a-4080-82b3-4988730cede2",
           "routes": [
             {
-              "uuid": "f3d9449d-a7bc-44c7-a743-227706e01b5a",
+              "uuid": "8f72948e-b842-45ff-8ca4-9051997cb350",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Vulnerabilities List",
-              "sourceStep": "/api/3/workflow_steps/c16cd6e2-c58c-4b10-a09c-6827a2018ac1",
-              "targetStep": "/api/3/workflow_steps/84441961-83e7-4556-875a-390750692173"
+              "sourceStep": "/api/3/workflow_steps/3291a74a-cf3a-4080-82b3-4988730cede2",
+              "targetStep": "/api/3/workflow_steps/b3ce1749-29ff-41e1-889c-0387421dc2d8"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c454b1e6-62c6-4151-8b43-3ed61483d5ed",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "fed683a2-ad32-4483-bb6f-f353eda142dd",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "478b9529-4839-4333-87f9-e46d49cf2a6b",
+              "uuid": "3943b8f5-f66a-4607-9961-f078661aaa2e",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -319,7 +319,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "975dce76-e1a2-4891-81f3-00a5d4ce5ecf",
+              "uuid": "c396f178-0892-49ae-9fa7-9e4a86b8336d",
               "@type": "WorkflowStep",
               "name": "Get Vulnerability Details",
               "description": null,
@@ -330,7 +330,7 @@
                 "params": {
                   "cve_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_vulnerability_details",
                 "operationTitle": "Get Vulnerability Details"
@@ -353,26 +353,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/478b9529-4839-4333-87f9-e46d49cf2a6b",
+          "triggerStep": "/api/3/workflow_steps/3943b8f5-f66a-4607-9961-f078661aaa2e",
           "routes": [
             {
-              "uuid": "d2ba5c47-1bac-4985-aa54-a5ffa07542d2",
+              "uuid": "3efad5d1-db3e-400b-a268-08b3e079c18f",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Vulnerability Details",
-              "sourceStep": "/api/3/workflow_steps/478b9529-4839-4333-87f9-e46d49cf2a6b",
-              "targetStep": "/api/3/workflow_steps/975dce76-e1a2-4891-81f3-00a5d4ce5ecf"
+              "sourceStep": "/api/3/workflow_steps/3943b8f5-f66a-4607-9961-f078661aaa2e",
+              "targetStep": "/api/3/workflow_steps/c396f178-0892-49ae-9fa7-9e4a86b8336d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "9626564f-9326-49e4-8eef-ff1c6f374fda",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "8135ab99-6e9c-4f32-b1db-e3059e86b70c",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "551c61fb-f25e-4247-ade5-b4b7e7c86b12",
+              "uuid": "a28bce32-99a8-47a8-8b71-8998323a42d0",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -389,7 +389,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "ed441430-01bc-4ef5-ba36-c41e75467341",
+              "uuid": "1bbe81b7-2857-4ba8-b2da-b5fa971f36b2",
               "@type": "WorkflowStep",
               "name": "Get Data Flow",
               "description": null,
@@ -400,7 +400,7 @@
                 "params": {
                   "last_seen": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_data_flow",
                 "operationTitle": "Get Data Flow"
@@ -423,26 +423,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/551c61fb-f25e-4247-ade5-b4b7e7c86b12",
+          "triggerStep": "/api/3/workflow_steps/a28bce32-99a8-47a8-8b71-8998323a42d0",
           "routes": [
             {
-              "uuid": "1f6bf1b2-b588-486a-8110-8610c3be0896",
+              "uuid": "83bdbac6-87e6-442e-b570-94a8a3f2856f",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Data Flow",
-              "sourceStep": "/api/3/workflow_steps/551c61fb-f25e-4247-ade5-b4b7e7c86b12",
-              "targetStep": "/api/3/workflow_steps/ed441430-01bc-4ef5-ba36-c41e75467341"
+              "sourceStep": "/api/3/workflow_steps/a28bce32-99a8-47a8-8b71-8998323a42d0",
+              "targetStep": "/api/3/workflow_steps/1bbe81b7-2857-4ba8-b2da-b5fa971f36b2"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "8e78c428-ed2f-454b-b52e-bd7ed0aae515",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "9b89602d-0667-4700-9087-871d66d361ba",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "2ed40151-b20d-40b9-897a-d09647e1f0db",
+              "uuid": "42c0f74f-1f14-42f7-8771-2f63e31e1322",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -459,7 +459,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "514f5998-9a7b-4ee7-bc24-2b1487440bbc",
+              "uuid": "1c17eb0b-f2a9-45e2-ba31-8c38571197bb",
               "@type": "WorkflowStep",
               "name": "Get Network List",
               "description": null,
@@ -470,7 +470,7 @@
                 "params": {
                   "offset": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_network_list",
                 "operationTitle": "Get Network List"
@@ -493,26 +493,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2ed40151-b20d-40b9-897a-d09647e1f0db",
+          "triggerStep": "/api/3/workflow_steps/42c0f74f-1f14-42f7-8771-2f63e31e1322",
           "routes": [
             {
-              "uuid": "f50ccec2-71ef-4992-8e93-f3c2f2ae8096",
+              "uuid": "5be11608-c7e5-448e-a4a5-53d8decca24d",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Network List",
-              "sourceStep": "/api/3/workflow_steps/2ed40151-b20d-40b9-897a-d09647e1f0db",
-              "targetStep": "/api/3/workflow_steps/514f5998-9a7b-4ee7-bc24-2b1487440bbc"
+              "sourceStep": "/api/3/workflow_steps/42c0f74f-1f14-42f7-8771-2f63e31e1322",
+              "targetStep": "/api/3/workflow_steps/1c17eb0b-f2a9-45e2-ba31-8c38571197bb"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "00e3977f-29c6-47f9-94c6-693fcbdccf9e",
-          "collection": "/api/3/workflow_collections/2999e503-cf27-4971-9072-d83295c1bd66",
+          "uuid": "22dd5b4f-25ec-44a3-a744-36802ccc0b50",
+          "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "steps": [
             {
-              "uuid": "568b0b7a-bdf5-4725-aaf8-793c8eb60913",
+              "uuid": "dbf6e1bf-992f-4ede-946d-ea566e9f026c",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -529,7 +529,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "4b49a518-0b3c-48da-b987-e27179fbe8c0",
+              "uuid": "4325787f-c240-45c9-81ba-888f02710332",
               "@type": "WorkflowStep",
               "name": "Get Network Details",
               "description": null,
@@ -540,7 +540,7 @@
                 "params": {
                   "network_id": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "otbase-inventory",
                 "operation": "get_network_details",
                 "operationTitle": "Get Network Details"
@@ -563,21 +563,21 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/568b0b7a-bdf5-4725-aaf8-793c8eb60913",
+          "triggerStep": "/api/3/workflow_steps/dbf6e1bf-992f-4ede-946d-ea566e9f026c",
           "routes": [
             {
-              "uuid": "bbc59689-ec80-4e4c-9317-e7e8eeefe61c",
+              "uuid": "fcd600ef-260e-48c3-abc6-4556fa942ca9",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Network Details",
-              "sourceStep": "/api/3/workflow_steps/568b0b7a-bdf5-4725-aaf8-793c8eb60913",
-              "targetStep": "/api/3/workflow_steps/4b49a518-0b3c-48da-b987-e27179fbe8c0"
+              "sourceStep": "/api/3/workflow_steps/dbf6e1bf-992f-4ede-946d-ea566e9f026c",
+              "targetStep": "/api/3/workflow_steps/4325787f-c240-45c9-81ba-888f02710332"
             }
           ]
         }
       ],
-      "name": "Sample - OTbase Inventory - 1.0.0",
+      "name": "Sample - OTbase Inventory - 1.0.1",
       "description": "Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.",
       "visible": true,
       "recordTags": [
