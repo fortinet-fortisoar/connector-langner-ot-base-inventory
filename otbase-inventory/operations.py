@@ -5,7 +5,7 @@ Copyright (c) 2024 Fortinet Inc
 Copyright end
 """
 
-import json
+from datetime import datetime
 
 import requests
 import requests_pkcs12
@@ -82,6 +82,19 @@ class OTBase(object):
 def check_payload(payload):
     result = {}
     for k, v in payload.items():
+        if k == 'modified' and v:
+            if isinstance(v, str):
+                if is_correct_format(v):
+                    result[k] = v
+                else:
+                    dt = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%fZ")
+                    output_timestamp = dt.strftime("%Y-%m-%d %H:%M:%S")
+                    result[k] = output_timestamp
+            elif isinstance(v, int):
+                dt = datetime.fromtimestamp(v)
+                formatted_time = dt.strftime("%Y-%m-%d %H:%M:%S")
+                result[k] = formatted_time
+            continue
         if isinstance(v, dict):
             x = check_payload(v)
             if len(x.keys()) > 0:
@@ -100,6 +113,14 @@ def check_payload(payload):
         elif v is not None and v != '':
             result[k] = v
     return result
+
+
+def is_correct_format(date_string):
+    try:
+        datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+        return True
+    except Exception:
+        return False
 
 
 def get_devices_list(config, params):
@@ -177,6 +198,7 @@ def get_network_details(config, params):
     endpoint = 'networks/{0}'.format(params.get('network_id'))
     response = lan.make_rest_call(endpoint, 'GET')
     return response
+
 
 # Not needed in this version
 # def custom_endpoint(config, params):
