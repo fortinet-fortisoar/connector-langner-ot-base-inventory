@@ -13,7 +13,7 @@
   "ingestion_modes": [
     "scheduled"
   ],
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-otbase-inventory/blob/release/1.1.0/otbase-inventory/docs/OTBase.md",
   "configuration": {
     "fields": [
       {
