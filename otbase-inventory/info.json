@@ -1,67 +1,70 @@
 {
   "name": "otbase-inventory",
   "label": "OTbase Inventory",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.",
   "publisher": "Fortinet",
-  "cs_approved": false,
+  "cs_approved": true,
   "cs_compatible": true,
   "category": "OT & IoT Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "ingestion_supported": false,
-  "help_online": "https://github.com/fortinet-fortisoar/connector-otbase-inventory/blob/release/1.0.1/otbase-inventory/docs/OTBase.md",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "help_online": "https://github.com/fortinet-fortisoar/connector-otbase-inventory/blob/release/1.1.0/otbase-inventory/docs/OTBase.md",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
-        "description": "Specify the URL of the Langner OTbase Inventory server to connect and perform automated operations.",
+        "description": "Specify the URL of the OTbase Inventory server to connect and perform automated operations.",
         "type": "text",
         "name": "server_url",
         "required": true,
         "editable": true,
         "visible": true,
-        "tooltip": "Specify the URL of the Langner OTbase Inventory server to connect and perform automated operations."
+        "tooltip": "Specify the URL of the OTbase Inventory server to connect and perform automated operations."
       },
       {
         "title": "Username",
-        "description": "Specify the username to access the Langner OTbase Inventory server to connect and perform automated operations.",
+        "description": "Specify the username to access the OTbase Inventory server to connect and perform automated operations.",
         "type": "text",
         "name": "username",
         "required": true,
         "editable": true,
         "visible": true,
-        "tooltip": "Specify the username to access the Langner OTbase Inventory server to connect and perform automated operations."
+        "tooltip": "Specify the username to access the OTbase Inventory server to connect and perform automated operations."
       },
       {
         "title": "Password",
-        "description": "Specify the password to access the Langner OTbase Inventory server to connect and perform automated operations.",
+        "description": "Specify the password to access the OTbase Inventory server to connect and perform automated operations.",
         "type": "password",
         "name": "password",
         "required": true,
         "editable": true,
         "visible": true,
-        "tooltip": "Specify the password to access the Langner OTbase Inventory server to connect and perform automated operations."
+        "tooltip": "Specify the password to access the OTbase Inventory server to connect and perform automated operations."
       },
       {
         "title": "PFX Path",
-        "description": "Specify the path to PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}",
+        "description": "Specify the path to PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}",
         "type": "text",
         "name": "pfx_path",
         "required": false,
         "editable": true,
         "visible": true,
-        "tooltip": "Specify the path to PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}"
+        "tooltip": "Specify the path to PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}"
       },
       {
         "title": "PFX Password",
-        "description": "Specify the password of PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations.",
+        "description": "Specify the password of PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations.",
         "type": "password",
         "name": "pfx_password",
         "required": false,
         "editable": true,
         "visible": true,
-        "tooltip": "Specify the password of PFX file(Personal Information Exchange) to access the Langner OTbase Inventory server to connect and perform automated operations."
+        "tooltip": "Specify the password of PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations."
       },
       {
         "title": "Verify SSL",
@@ -80,60 +83,60 @@
     {
       "operation": "get_devices_list",
       "title": "Get Devices List",
-      "description": "Retrieves a list of devices from Langner OTbase Inventory based on the input parameters you have specified.",
+      "description": "Retrieves a list of devices from OTbase Inventory based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_devices_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Device Name",
-          "description": "(Optional) Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the name of the device based on which you want to retrieve devices from  OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "name",
-          "tooltip": "(Optional) Specify the name of the device based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the name of the device based on which you want to retrieve devices from  OTbase Inventory."
         },
         {
           "title": "Location ID",
-          "description": "(Optional) Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the location based on which you want to retrieve devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "locationid",
-          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve devices from OTbase Inventory."
         },
         {
           "title": "OT System ID",
-          "description": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "otsystemid",
-          "tooltip": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory."
         },
         {
           "title": "OT System Name",
-          "description": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "otsystem",
-          "tooltip": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from OTbase Inventory."
         },
         {
           "title": "IP Address",
-          "description": "(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the IP address based on which you want to retrieve devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "ipaddress",
-          "tooltip": "(Optional) Specify the IP address based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the IP address based on which you want to retrieve devices from OTbase Inventory."
         },
         {
           "title": "Include Data",
@@ -155,13 +158,13 @@
         },
         {
           "title": "Network ID",
-          "description": "(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "networkid",
-          "tooltip": "(Optional) Specify the ID of the network based on which you want to retrieve devices from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory."
         },
         {
           "title": "Modified DateTime",
@@ -265,7 +268,7 @@
     {
       "operation": "get_device_details",
       "title": "Get Device Details",
-      "description": "Retrieves a specific device information from Langner OTbase Inventory based on the device ID and include data you have specified.",
+      "description": "Retrieves a specific device information from OTbase Inventory based on the device ID and include data you have specified.",
       "category": "investigation",
       "annotation": "get_device_details",
       "enabled": true,
@@ -273,12 +276,12 @@
         {
           "title": "Device ID",
           "name": "device_id",
-          "description": "Specify the ID of the device based on which you want to retrieve specific device details from Langner OTbase Inventory.",
+          "description": "Specify the ID of the device based on which you want to retrieve specific device details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the device based on which you want to retrieve specific device details from Langner OTbase Inventory."
+          "tooltip": "Specify the ID of the device based on which you want to retrieve specific device details from OTbase Inventory."
         },
         {
           "title": "Include Data",
@@ -363,7 +366,7 @@
     {
       "operation": "delete_device_details",
       "title": "Delete Device Details",
-      "description": "Deletes an specific device information from Langner OTbase Inventory based on the device ID you have specified.",
+      "description": "Deletes an specific device information from OTbase Inventory based on the device ID you have specified.",
       "category": "investigation",
       "annotation": "delete_device_details",
       "enabled": true,
@@ -371,12 +374,12 @@
         {
           "title": "Device ID",
           "name": "device_id",
-          "description": "Specify the ID of the device based on which you want to delete specific device details from Langner OTbase Inventory.",
+          "description": "Specify the ID of the device based on which you want to delete specific device details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the device based on which you want to delete specific device details from Langner OTbase Inventory."
+          "tooltip": "Specify the ID of the device based on which you want to delete specific device details from OTbase Inventory."
         }
       ],
       "output_schema": {}
@@ -384,7 +387,7 @@
     {
       "operation": "get_vulnerabilities_list",
       "title": "Get Vulnerabilities List",
-      "description": "Retrieves a list of vulnerabilities from Langner OTbase Inventory based on the input parameters you have specified.",
+      "description": "Retrieves a list of vulnerabilities from OTbase Inventory based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_vulnerabilities_list",
       "enabled": true,
@@ -407,13 +410,13 @@
         },
         {
           "title": "Location ID",
-          "description": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "locationid",
-          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from Langner OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from OTbase Inventory."
         }
       ],
       "output_schema": {
@@ -442,7 +445,7 @@
     {
       "operation": "get_vulnerability_details",
       "title": "Get Vulnerability Details",
-      "description": "Retrieves a specific vulnerability information from Langner OTbase Inventory based on the CVE ID you have specified.",
+      "description": "Retrieves a specific vulnerability information from OTbase Inventory based on the CVE ID you have specified.",
       "category": "investigation",
       "annotation": "get_vulnerability_details",
       "enabled": true,
@@ -450,12 +453,12 @@
         {
           "title": "CVE ID",
           "name": "cve_id",
-          "description": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory.",
+          "description": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from Langner OTbase Inventory."
+          "tooltip": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from OTbase Inventory."
         }
       ],
       "output_schema": {
@@ -479,7 +482,7 @@
     {
       "operation": "get_data_flow",
       "title": "Get Data Flow",
-      "description": "Retrieves a list of data flow from Langner OTbase Inventory based on the input parameter you have specified.",
+      "description": "Retrieves a list of data flow from OTbase Inventory based on the input parameter you have specified.",
       "category": "investigation",
       "annotation": "get_data_flow",
       "enabled": true,
@@ -508,7 +511,7 @@
     {
       "operation": "get_network_list",
       "title": "Get Network List",
-      "description": "Retrieves a list of networks from Langner OTbase Inventory based on the input parameter you have specified.",
+      "description": "Retrieves a list of networks from OTbase Inventory based on the input parameter you have specified.",
       "category": "investigation",
       "annotation": "get_network_list",
       "enabled": true,
@@ -552,7 +555,7 @@
     {
       "operation": "get_network_details",
       "title": "Get Network Details",
-      "description": "Retrieves a specific network information from Langner OTbase Inventory based on the network ID you have specified.",
+      "description": "Retrieves a specific network information from OTbase Inventory based on the network ID you have specified.",
       "category": "investigation",
       "annotation": "get_network_details",
       "enabled": true,
@@ -560,12 +563,12 @@
         {
           "title": "Network ID",
           "name": "network_id",
-          "description": "Specify the ID of the network based on which you want to retrieve specific network details from Langner OTbase Inventory.",
+          "description": "Specify the ID of the network based on which you want to retrieve specific network details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the network based on which you want to retrieve specific network details from Langner OTbase Inventory."
+          "tooltip": "Specify the ID of the network based on which you want to retrieve specific network details from OTbase Inventory."
         }
       ],
       "output_schema": {
