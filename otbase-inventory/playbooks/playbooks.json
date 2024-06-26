@@ -59,7 +59,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a list of devices from Langner OTbase Inventory based on the input parameters you have specified.",
+          "description": "Retrieves a list of devices from OTbase Inventory based on the input parameters you have specified.",
           "name": "Get Devices List",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -130,7 +130,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a specific device information from Langner OTbase Inventory based on the device ID and include data you have specified.",
+          "description": "Retrieves a specific device information from OTbase Inventory based on the device ID and include data you have specified.",
           "name": "Get Device Details",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -200,7 +200,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Deletes an specific device information from Langner OTbase Inventory based on the device ID you have specified.",
+          "description": "Deletes an specific device information from OTbase Inventory based on the device ID you have specified.",
           "name": "Delete Device Details",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -271,7 +271,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a list of vulnerabilities from Langner OTbase Inventory based on the input parameters you have specified.",
+          "description": "Retrieves a list of vulnerabilities from OTbase Inventory based on the input parameters you have specified.",
           "name": "Get Vulnerabilities List",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -341,7 +341,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a specific vulnerability information from Langner OTbase Inventory based on the CVE ID you have specified.",
+          "description": "Retrieves a specific vulnerability information from OTbase Inventory based on the CVE ID you have specified.",
           "name": "Get Vulnerability Details",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -411,7 +411,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a list of data flow from Langner OTbase Inventory based on the input parameter you have specified.",
+          "description": "Retrieves a list of data flow from OTbase Inventory based on the input parameter you have specified.",
           "name": "Get Data Flow",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -481,7 +481,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a list of networks from Langner OTbase Inventory based on the input parameter you have specified.",
+          "description": "Retrieves a list of networks from OTbase Inventory based on the input parameter you have specified.",
           "name": "Get Network List",
           "tag": "#OTbase Inventory",
           "recordTags": [
@@ -551,7 +551,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves a specific network information from Langner OTbase Inventory based on the network ID you have specified.",
+          "description": "Retrieves a specific network information from OTbase Inventory based on the network ID you have specified.",
           "name": "Get Network Details",
           "tag": "#OTbase Inventory",
           "recordTags": [
