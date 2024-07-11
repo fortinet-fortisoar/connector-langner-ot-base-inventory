@@ -589,7 +589,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1719214611,
+          "lastModifyDate": 1720688146,
           "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/d40d103c-1120-4cd5-aca8-f7ff567ec401",
@@ -599,6 +599,8 @@
               "name": "Configuration",
               "description": null,
               "arguments": {
+                "networkid": "",
+                "otsystemid": "",
                 "location_id": "",
                 "device_limit": "300",
                 "pullTimeMacro": "OTbaseInventoryLastPullTime_{{vars['audit_info']['cyops_playbook_iri'].split('/')[-1].replace('-','_')}}"
@@ -695,9 +697,9 @@
                   "modified": "{{vars.last_pull_time}}",
                   "otsystem": "",
                   "ipaddress": "",
-                  "networkid": "",
+                  "networkid": "{{vars.networkid}}",
                   "locationid": "{{vars.location_id}}",
-                  "otsystemid": ""
+                  "otsystemid": "{{vars.otsystemid}}"
                 },
                 "version": "1.1.0",
                 "connector": "otbase-inventory",
@@ -724,7 +726,7 @@
                 "config": "658da38e-6d63-4418-9421-fc1cdbd7a1ea",
                 "params": {
                   "name": "",
-                  "count": "5",
+                  "count": 5,
                   "offset": 0,
                   "include": [
                     "All"
@@ -732,9 +734,9 @@
                   "modified": "{{vars.last_pull_time}}",
                   "otsystem": "",
                   "ipaddress": "",
-                  "networkid": "",
+                  "networkid": "{{vars.networkid}}",
                   "locationid": "{{vars.location_id}}",
-                  "otsystemid": ""
+                  "otsystemid": "{{vars.otsystemid}}"
                 },
                 "version": "1.1.0",
                 "connector": "otbase-inventory",
@@ -840,7 +842,7 @@
                   "input": {
                     "params": []
                   },
-                  "_configuration_schema": "[\n   {\n      \"title\":\"Pull Devices Created or Updated in Last X min\",\n      \"required\":true,\n      \"editable\":true,\n      \"visible\":true,\n      \"type\":\"integer\",\n      \"name\":\"fetch_devices_in_last_X_minutes\",\n      \"tooltip\":\"Specify the timeframe in minutes to pull the devices for the first time.\"\n   },\n   {\n      \"title\":\"Device Location\",\n      \"name\":\"location_id\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the Location ID through which you want to filter Devices\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Limit\",\n      \"name\":\"device_limit\",\n      \"type\":\"integer\",\n      \"tooltip\":\"Specify the number of Devices you want to ingest. Default value is 300.\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   }\n]"
+                  "_configuration_schema": "[\n   {\n      \"title\":\"Pull Devices Created or Updated in Last X min\",\n      \"required\":true,\n      \"editable\":true,\n      \"visible\":true,\n      \"type\":\"integer\",\n      \"name\":\"fetch_devices_in_last_X_minutes\",\n      \"tooltip\":\"Specify the timeframe in minutes to pull the devices for the first time.\"\n   },\n   {\n      \"title\":\"Device Location\",\n      \"name\":\"location_id\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the Location ID through which you want to filter Devices\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"OT System ID\",\n      \"name\":\"otsystemid\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Network ID\",\n      \"name\":\"networkid\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Limit\",\n      \"name\":\"device_limit\",\n      \"type\":\"integer\",\n      \"tooltip\":\"Specify the number of Devices you want to ingest. Default value is 300.\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   }\n]"
                 },
                 "triggerOnSource": true,
                 "triggerOnReplicate": false
@@ -948,7 +950,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "dfdb72f0-f9ea-4b04-8b6c-3af2c50e3295",
-          "id": 1079,
+          "id": 1113,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
