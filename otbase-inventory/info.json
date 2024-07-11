@@ -9,6 +9,7 @@
   "category": "OT & IoT Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
+  "contributor": "",
   "ingestion_supported": true,
   "ingestion_modes": [
     "scheduled"

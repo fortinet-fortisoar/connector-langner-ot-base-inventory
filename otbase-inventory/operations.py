@@ -44,7 +44,7 @@ class OTBase(object):
             except Exception as err:
                 logger.error(f"Error in curl utils: {str(err)}")
 
-            if self.pfx_path is not None:
+            if self.pfx_path:
                 response = requests_pkcs12.request(url=url,
                                                    method=method, auth=(self.username, self.password),
                                                    pkcs12_filename=self.pfx_path,
@@ -82,7 +82,7 @@ class OTBase(object):
 def check_payload(payload):
     result = {}
     for k, v in payload.items():
-        if k == 'modified' and v:
+        if (k == 'modified' or k == 'last_seen') and v:
             if isinstance(v, str):
                 if is_correct_format(v):
                     result[k] = v
@@ -128,9 +128,9 @@ def get_devices_list(config, params):
     endpoint = 'devices'
     include = params.get('include')
     if include:
-        for data in include:
-            include = "".join(data.lower())
-        params.update({'include': include})
+        _include = [data.lower() for data in include]
+        _include_str = ",".join(_include)
+        params.update({'include': _include_str})
     payload = check_payload(params)
     response = lan.make_rest_call(endpoint, 'GET', params=payload)
     return response
@@ -141,9 +141,9 @@ def get_device_details(config, params):
     endpoint = 'devices/{0}'.format(params.get('device_id'))
     include = params.get('include')
     if include:
-        for data in include:
-            include = "".join(data.lower())
-        params.update({'include': include})
+        _include = [data.lower() for data in include]
+        _include_str = ",".join(_include)
+        params.update({'include': _include_str})
     payload = check_payload(params)
     response = lan.make_rest_call(endpoint, 'GET', params=payload)
     return response
@@ -162,9 +162,9 @@ def get_vulnerabilities_list(config, params):
     endpoint = 'vulnerabilities'
     priority = params.get('priority')
     if priority:
-        for data in priority:
-            priority = "".join(data.lower())
-        params.update({'priority': priority})
+        _priority = [data.lower() for data in priority]
+        _include_priority = ",".join(_priority)
+        params.update({'include': _include_priority})
     payload = check_payload(params)
     response = lan.make_rest_call(endpoint, 'GET', params=payload)
     return response
