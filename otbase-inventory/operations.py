@@ -67,15 +67,19 @@ class OTBase(object):
                 logger.error("{0}".format(response.status_code))
                 raise ConnectorError("{0}:{1}".format(response.status_code, response.content))
         except requests.exceptions.SSLError:
+            logger.error('SSL certificate validation failed')
             raise ConnectorError('SSL certificate validation failed')
         except requests.exceptions.ConnectTimeout:
+            logger.error('The request timed out while trying to connect to the server')
             raise ConnectorError('The request timed out while trying to connect to the server')
         except requests.exceptions.ReadTimeout:
-            raise ConnectorError(
-                'The server did not send any data in the allotted amount of time')
+            logger.error('The server did not send any data in the allotted amount of time')
+            raise ConnectorError('The server did not send any data in the allotted amount of time')
         except requests.exceptions.ConnectionError:
-            raise ConnectorError('Invalid Credentials')
+            logger.error('Invalid endpoint or credentials')
+            raise ConnectorError('Invalid endpoint or credentials')
         except Exception as err:
+            logger.error(str(err))
             raise ConnectorError(str(err))
 
 
@@ -221,7 +225,8 @@ def _check_health(config):
         get_devices_list(config, params={})
         return True
     except Exception as err:
-        raise ConnectorError(f'Error in Check Health {err}')
+        logger.error(f'Error in Check Health: {err}')
+        raise ConnectorError(f'Error in Check Health: {err}')
 
 
 operations = {

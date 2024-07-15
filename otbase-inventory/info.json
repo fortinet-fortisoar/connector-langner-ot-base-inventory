@@ -418,6 +418,28 @@
           "type": "text",
           "name": "locationid",
           "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from OTbase Inventory."
+        },
+        {
+          "title": "Limit",
+          "description": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 100.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "count",
+          "value": 100,
+          "tooltip": "(Optional) The maximum number of records to return. By default, this option is set as 100"
+        },
+        {
+          "title": "Offset",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "value": 0,
+          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0"
         }
       ],
       "output_schema": {
