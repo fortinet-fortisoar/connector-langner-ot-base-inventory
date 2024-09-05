@@ -1,6 +1,7 @@
 ## About the connector
 Enterprise-grade OT asset management software. OTbase is the gold standard for large scale OT asset inventories. It inventories OT devices from PLCs over network switches to sensors and actuators and integrates nicely with your existing tools and platforms.
 <p>This document provides information about the OTbase Inventory Connector, which facilitates automated interactions, with a OTbase Inventory server using FortiSOAR&trade; playbooks. Add the OTbase Inventory Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with OTbase Inventory.</p>
+
 ### Version information
 
 Connector Version: 1.1.0
@@ -39,6 +40,7 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 </td>
 </tr><tr><td>Verify SSL</td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set to True.</td></tr>
 </tbody></table>
+
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Devices List</td><td>Retrieves a list of devices from OTbase Inventory based on the input parameters you have specified.</td><td>get_devices_list <br/>Investigation</td></tr>
@@ -50,6 +52,7 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Get Network List</td><td>Retrieves a list of networks from OTbase Inventory based on the input parameter you have specified.</td><td>get_network_list <br/>Investigation</td></tr>
 <tr><td>Get Network Details</td><td>Retrieves a specific network information from OTbase Inventory based on the network ID you have specified.</td><td>get_network_details <br/>Investigation</td></tr>
 </tbody></table>
+
 ### operation: Get Devices List
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Device Name</td><td>(Optional) Specify the name of the device based on which you want to retrieve devices from  OTbase Inventory.
@@ -63,6 +66,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Limit</td><td>(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 300.
 </td></tr><tr><td>Offset</td><td>(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
 
@@ -136,6 +140,7 @@ The output contains the following populated JSON schema:
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Device ID</td><td>Specify the ID of the device based on which you want to retrieve specific device details from OTbase Inventory.
 </td></tr><tr><td>Include Data</td><td>(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
 
