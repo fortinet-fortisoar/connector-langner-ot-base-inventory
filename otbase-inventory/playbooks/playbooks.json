@@ -589,7 +589,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1720688146,
+          "lastModifyDate": 1725513665,
           "collection": "/api/3/workflow_collections/0852c21b-b9fc-48b4-bdbe-da7dd06d8298",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/d40d103c-1120-4cd5-aca8-f7ff567ec401",
@@ -645,7 +645,7 @@
                     "/api/3/tags/otbase-inventory"
                   ],
                   "sourceData": "{{vars.item | toJSON}}",
-                  "description": "{{vars.item.hardware.description}}\n\n<style>\n    table, th, td {\n    border: 1px solid black;\n    border-collapse: collapse;\n    }\n</style>\n<table border=\"1\" style=\"width:100%\">\n    <tr>\n        <th style=\"width:10%\">Name</th>\n        <th style=\"width:10%\">Device ID</th>\n        <th style=\"width:10%\">Description</th>\n        <th style=\"width:10%\">Criticality</th>\n        <th style=\"width:10%\">Vendor</th>\n        <th style=\"width:10%\">Vendor Link</th>\n        <th style=\"width:10%\">Model</th>\n        <th style=\"width:10%\">Stage</th>\n        <th style=\"width:10%\">Modified Time</th>\n    </tr>\n    <tbody>\n        <tr>\n            <td>\n        {% if vars.item['name']%}{{vars.item['name']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['deviceId']%}{{vars.item['deviceId']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['description']%}{{vars.item['description']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['criticality']%}{{vars.item['criticality']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['hardware'].vendor%}{{vars.item['hardware'].vendor}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['hardware'].vendorLink%}{{vars.item['hardware'].vendorLink}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['hardware'].model%}{{vars.item['hardware'].model}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['stage']%}{{vars.item['stage']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['modified']%}{{vars.item['modified']}}{%else%}Not Found{%endif%}\n            </td>\n        </tr>\n    </tbody>\n</table>",
+                  "description": "{{vars.item.hardware.description}}\n\n<style>\n    table, th, td {\n    border: 1px solid black;\n    border-collapse: collapse;\n    }\n</style>\n<table border=\"1\" style=\"width:100%\">\n    <tr>\n        <th style=\"width:10%\">Name</th>\n        <th style=\"width:10%\">Description</th>\n        <th style=\"width:10%\">Criticality</th>\n        <th style=\"width:10%\">Vendor</th>\n        <th style=\"width:10%\">Vendor Link</th>\n        <th style=\"width:10%\">Model</th>\n        <th style=\"width:10%\">Stage</th>\n        <th style=\"width:10%\">Modified Time</th>\n    </tr>\n    <tbody>\n        <tr>\n            <td>\n        {% if vars.item['name']%}{{vars.item['name']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['description']%}{{vars.item['description']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['criticality']%}{{vars.item['criticality']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['hardware'].vendor%}{{vars.item['hardware'].vendor}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['hardware'].vendorLink%}{{vars.item['hardware'].vendorLink}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['hardware'].model%}{{vars.item['hardware'].model}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['stage']%}{{vars.item['stage']}}{%else%}Not Found{%endif%}\n            </td>\n            <td>\n            {% if vars.item['modified']%}{{vars.item['modified']}}{%else%}Not Found{%endif%}\n            </td>\n        </tr>\n    </tbody>\n</table>",
                   "serialNumber": "{{vars.item.hardware.orderNumber}}"
                 },
                 "_showJson": false,
@@ -670,7 +670,7 @@
               "name": "Extract Value From Macro Value",
               "description": null,
               "arguments": {
-                "last_pull_time": "{% if (vars.steps.Get_Macro_Value.data[\"hydra:member\"] | length) < 1%}{{arrow.utcnow().shift(minutes=-vars.fetch_devices_in_last_X_minutes).format('YYYY-MM-DD HH:mm:ss')}}{% else %}{{vars.steps.Get_Macro_Value.data['hydra:member'][0]['value']}}{% endif %}",
+                "last_pull_time": "{% if (vars.steps.Get_Macro_Value.data[\"hydra:member\"] | length) < 1%}{{arrow.get(vars.fetch_devices_since).to(\"UTC\").format(\"YYYY-MM-DD HH:mm:ss\")}}{% else %}{{vars.steps.Get_Macro_Value.data['hydra:member'][0]['value']}}{% endif %}",
                 "current_timestamp": "{{arrow.utcnow().format(\"YYYY-MM-DD HH:mm:ss\")}}"
               },
               "status": null,
@@ -726,7 +726,7 @@
                 "config": "658da38e-6d63-4418-9421-fc1cdbd7a1ea",
                 "params": {
                   "name": "",
-                  "count": 5,
+                  "count": 2,
                   "offset": 0,
                   "include": [
                     "All"
@@ -805,20 +805,6 @@
             },
             {
               "@type": "WorkflowStep",
-              "name": "Output Step",
-              "description": null,
-              "arguments": {
-                "data": "{{vars.steps.Fetch_Sample_Devices.data.data}}"
-              },
-              "status": null,
-              "top": "840",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "group": null,
-              "uuid": "0bffb7e5-34f6-4d6e-9ad1-8d66b89c4254"
-            },
-            {
-              "@type": "WorkflowStep",
               "name": "Set Result",
               "description": null,
               "arguments": {
@@ -842,7 +828,7 @@
                   "input": {
                     "params": []
                   },
-                  "_configuration_schema": "[\n   {\n      \"title\":\"Pull Devices Created or Updated in Last X min\",\n      \"required\":true,\n      \"editable\":true,\n      \"visible\":true,\n      \"type\":\"integer\",\n      \"name\":\"fetch_devices_in_last_X_minutes\",\n      \"tooltip\":\"Specify the timeframe in minutes to pull the devices for the first time.\"\n   },\n   {\n      \"title\":\"Device Location\",\n      \"name\":\"location_id\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the Location ID through which you want to filter Devices\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"OT System ID\",\n      \"name\":\"otsystemid\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Network ID\",\n      \"name\":\"networkid\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Limit\",\n      \"name\":\"device_limit\",\n      \"type\":\"integer\",\n      \"tooltip\":\"Specify the number of Devices you want to ingest. Default value is 300.\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   }\n]"
+                  "_configuration_schema": "[\n   {\n      \"title\":\"Fetch Devices Since\",\n      \"required\":true,\n      \"editable\":true,\n      \"visible\":true,\n      \"type\":\"datetime\",\n      \"name\":\"fetch_devices_since\",\n      \"tooltip\":\"Select a date and time to retrieve Devices created or updated after the specified time.\",\n\"sub_title\": \"Select a date and time to retrieve alerts/incidents created or updated after the specified time.\"\n   },\n   {\n      \"title\":\"Device Location\",\n      \"name\":\"location_id\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the Location ID through which you want to filter Devices\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"OT System ID\",\n      \"name\":\"otsystemid\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Network ID\",\n      \"name\":\"networkid\",\n      \"type\":\"text\",\n      \"tooltip\":\"Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   },\n   {\n      \"title\":\"Limit\",\n      \"name\":\"device_limit\",\n      \"type\":\"integer\",\n      \"tooltip\":\"Specify the number of Devices you want to ingest. Default value is 300.\",\n      \"required\":false,\n      \"editable\":true,\n      \"visible\":true\n   }\n]"
                 },
                 "triggerOnSource": true,
                 "triggerOnReplicate": false
@@ -853,6 +839,20 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
               "group": null,
               "uuid": "d40d103c-1120-4cd5-aca8-f7ff567ec401"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Step Output",
+              "description": null,
+              "arguments": {
+                "data": "{{vars.steps.Fetch_Sample_Devices.data.data}}"
+              },
+              "status": null,
+              "top": "840",
+              "left": "475",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "0bffb7e5-34f6-4d6e-9ad1-8d66b89c4254"
             }
           ],
           "routes": [
@@ -950,7 +950,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "dfdb72f0-f9ea-4b04-8b6c-3af2c50e3295",
-          "id": 1113,
+          "id": 2716,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1091,7 +1091,7 @@
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "e12d99ae-35a3-49bf-bb9f-c7f80bc3adc6",
-          "id": 1080,
+          "id": 2717,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
