@@ -15,7 +15,7 @@ import requests
 import importlib
 from connectors.core.connector import ConnectorError
 
-# Removing "Invalid" types usecases, Since the API is responding with ok status even if the parameter is wrong
+# Removing test cases with invalid parameters generated for each connector action
 with open('tests/config_and_params.json', 'r') as file:
     params = json.load(file)
 
