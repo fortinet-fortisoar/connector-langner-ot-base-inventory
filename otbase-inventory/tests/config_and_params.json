@@ -1,0 +1,79 @@
+{
+  "config": [
+    {
+      "server_url": "",
+      "username": "",
+      "password": "",
+      "pfx_path": "",
+      "pfx_password": "",
+      "verify_ssl": false
+    }
+  ],
+  "get_devices_list": [
+    {
+      "name": null,
+      "locationid": null,
+      "otsystemid": null,
+      "otsystem": null,
+      "ipaddress": null,
+      "include": [
+        "Software",
+        "Vulnerabilities"
+      ],
+      "networkid": null,
+      "modified": null,
+      "count": 5,
+      "offset": null
+    }
+  ],
+  "get_device_details": [
+    {
+      "device_id": "",
+      "include": [
+        "Software",
+        "Vulnerabilities"
+      ]
+    }
+  ],
+  "get_vulnerabilities_list": [
+    {
+      "priority": [
+        "Critical",
+        "High"
+      ],
+      "locationid": null,
+      "count": 100,
+      "offset": null
+    }
+  ],
+  "get_vulnerability_details": [
+    {
+      "cve_id": ""
+    }
+  ],
+  "get_data_flow": [
+    {
+      "last_seen": ""
+    }
+  ],
+  "get_network_list": [
+    {
+      "offset": null
+    }
+  ],
+  "get_network_details": [
+    {
+      "network_id": ""
+    }
+  ],
+  "invalid_params": {
+    "text": "1234567890!@#$%^&*()_+qwertyuioplkjhgfdsazxcvbnm?/.,>~<;'|[]{}:`",
+    "textarea": "1234567890!@#$%^&*()_+qwertyuioplkjhgfdsazxcvbnm?/.,>~<;'|[]{}:`",
+    "email": "user@domain.com",
+    "password": "*******",
+    "integer": -123,
+    "json": {
+      "KeY": "V@|U{"
+    }
+  }
+}

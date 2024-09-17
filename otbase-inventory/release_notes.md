@@ -1,2 +1,2 @@
 ### What's Improved
-- Added support of Data Ingestion, OTbase Inventory Devices to FSR Assets
+- Added support for Data Ingestion to ingest and map OTbase Inventory devices to FortiSOAR™ Assets 

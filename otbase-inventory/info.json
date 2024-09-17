@@ -14,7 +14,7 @@
   "ingestion_modes": [
     "scheduled"
   ],
-  "help_online": "https://github.com/fortinet-fortisoar/connector-otbase-inventory/blob/release/1.1.0/otbase-inventory/docs/OTBase.md",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.1.0/otbase-inventory/948/otbase-inventory-v1-1-0",
   "configuration": {
     "fields": [
       {
@@ -49,13 +49,13 @@
       },
       {
         "title": "PFX Path",
-        "description": "Specify the path to PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}",
+        "description": "Specify the path to PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations. Ex: /tmp/path/to/pfx/file",
         "type": "text",
         "name": "pfx_path",
         "required": false,
         "editable": true,
         "visible": true,
-        "tooltip": "Specify the path to PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations. Ex: /tmp/{pfx-file-name}"
+        "tooltip": "Specify the path to PFX file(Personal Information Exchange) to access the OTbase Inventory server to connect and perform automated operations. Ex: /tmp/path/to/pfx/file"
       },
       {
         "title": "PFX Password",
@@ -84,70 +84,70 @@
     {
       "operation": "get_devices_list",
       "title": "Get Devices List",
-      "description": "Retrieves a list of devices from OTbase Inventory based on the input parameters you have specified.",
+      "description": "Retrieves a list of devices from OTbase Inventory based on device name, location ID, and input parameters that you have specified.",
       "category": "investigation",
       "annotation": "get_devices_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Device Name",
-          "description": "(Optional) Specify the name of the device based on which you want to retrieve devices from  OTbase Inventory.",
+          "description": "(Optional) Specify the name of the device based on which to filter retrieved devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "name",
-          "tooltip": "(Optional) Specify the name of the device based on which you want to retrieve devices from  OTbase Inventory."
+          "tooltip": "(Optional) Specify the name of the device based on which to filter retrieved devices from OTbase Inventory."
         },
         {
           "title": "Location ID",
-          "description": "(Optional) Specify the ID of the location based on which you want to retrieve devices from OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the location based on which to filter retrieved devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "locationid",
-          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve devices from OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the location based on which to filter retrieved devices from OTbase Inventory."
         },
         {
           "title": "OT System ID",
-          "description": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the OT system based on which to filter retrieved devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "otsystemid",
-          "tooltip": "(Optional) Specify the ID of the OT system based on which you want to retrieve devices from OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the OT system based on which to filter retrieved devices from OTbase Inventory."
         },
         {
           "title": "OT System Name",
-          "description": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from OTbase Inventory.",
+          "description": "(Optional) Specify the name of the OT system based on which to filter retrieved devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "otsystem",
-          "tooltip": "(Optional) Specify the name of the OT system based on which you want to retrieve devices from OTbase Inventory."
+          "tooltip": "(Optional) Specify the name of the OT system based on which to filter retrieved devices from OTbase Inventory."
         },
         {
           "title": "IP Address",
-          "description": "(Optional) Specify the IP address based on which you want to retrieve devices from OTbase Inventory.",
+          "description": "(Optional) Specify the IP address based on which to filter retrieved devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "ipaddress",
-          "tooltip": "(Optional) Specify the IP address based on which you want to retrieve devices from OTbase Inventory."
+          "tooltip": "(Optional) Specify the IP address based on which to filter retrieved devices from OTbase Inventory."
         },
         {
           "title": "Include Data",
-          "description": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "description": "(Optional) Select data to include in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "multiselect",
           "name": "include",
-          "tooltip": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "tooltip": "(Optional) Select data to include in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "options": [
             "Software",
             "Vulnerabilities",
@@ -159,23 +159,23 @@
         },
         {
           "title": "Network ID",
-          "description": "(Optional) Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the network based on which to filter retrieved devices from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "networkid",
-          "tooltip": "(Optional) Specify the ID of the network based on which you want to retrieve devices from OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the network based on which to filter retrieved devices from OTbase Inventory."
         },
         {
           "title": "Modified DateTime",
-          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp. Ex: 2024-04-18 19:12:59",
+          "description": "(Optional) Select the DateTime using which to filter the result set to only include only those items that have been modified after the specified timestamp. For example: 2024-04-18 19:12:59",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "datetime",
           "name": "modified",
-          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been modified after the specified timestamp. Ex 2024-04-18 19:12:59"
+          "tooltip": "(Optional) Select the DateTime using which to filter the result set to only include only those items that have been modified after the specified timestamp. For example: 2024-04-18 19:12:59"
         },
         {
           "title": "Limit",
@@ -186,18 +186,18 @@
           "type": "integer",
           "name": "count",
           "value": 300,
-          "tooltip": "(Optional) The maximum number of records to return. By default, this option is set as 300"
+          "tooltip": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 300."
         },
         {
           "title": "Offset",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set to 0.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "offset",
           "value": 0,
-          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0"
+          "tooltip": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set to 0."
         }
       ],
       "output_schema": {
@@ -269,7 +269,7 @@
     {
       "operation": "get_device_details",
       "title": "Get Device Details",
-      "description": "Retrieves a specific device information from OTbase Inventory based on the device ID and include data you have specified.",
+      "description": "Retrieves a specific device's information from OTbase Inventory based on the device ID and data that you have selected to receive in response.",
       "category": "investigation",
       "annotation": "get_device_details",
       "enabled": true,
@@ -277,22 +277,22 @@
         {
           "title": "Device ID",
           "name": "device_id",
-          "description": "Specify the ID of the device based on which you want to retrieve specific device details from OTbase Inventory.",
+          "description": "Specify the ID of the device based on which to retrieve specific device details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the device based on which you want to retrieve specific device details from OTbase Inventory."
+          "tooltip": "Specify the ID of the device based on which to retrieve specific device details from OTbase Inventory."
         },
         {
           "title": "Include Data",
-          "description": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "description": "(Optional) Select data to include in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "multiselect",
           "name": "include",
-          "tooltip": "(Optional) Select the multiple options to include data in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
+          "tooltip": "(Optional) Select data to include in response that this operation returns. You can choose from the following options: Software, Vulnerabilities, Compliance, Modules, Admins, or All.",
           "options": [
             "Software",
             "Vulnerabilities",
@@ -375,12 +375,12 @@
         {
           "title": "Device ID",
           "name": "device_id",
-          "description": "Specify the ID of the device based on which you want to delete specific device details from OTbase Inventory.",
+          "description": "Specify the ID of the device to delete its details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the device based on which you want to delete specific device details from OTbase Inventory."
+          "tooltip": "Specify the ID of the device to delete its details from OTbase Inventory."
         }
       ],
       "output_schema": {}
@@ -388,7 +388,7 @@
     {
       "operation": "get_vulnerabilities_list",
       "title": "Get Vulnerabilities List",
-      "description": "Retrieves a list of vulnerabilities from OTbase Inventory based on the input parameters you have specified.",
+      "description": "Retrieves a list of vulnerabilities from OTbase Inventory based on the priority, location ID, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "get_vulnerabilities_list",
       "enabled": true,
@@ -411,13 +411,13 @@
         },
         {
           "title": "Location ID",
-          "description": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from OTbase Inventory.",
+          "description": "(Optional) Specify the ID of the location based on which to filter retrieved vulnerabilities from OTbase Inventory.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "locationid",
-          "tooltip": "(Optional) Specify the ID of the location based on which you want to retrieve vulnerabilities from OTbase Inventory."
+          "tooltip": "(Optional) Specify the ID of the location based on which to filter retrieved vulnerabilities from OTbase Inventory."
         },
         {
           "title": "Limit",
@@ -428,18 +428,18 @@
           "type": "integer",
           "name": "count",
           "value": 100,
-          "tooltip": "(Optional) The maximum number of records to return. By default, this option is set as 100"
+          "tooltip": "(Optional) Specify the maximum number of results, per page, that this operation should return. By default, this option is set as 100."
         },
         {
           "title": "Offset",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "description": "(Optional) Specify the count of records to skip in the results returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set to 0.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "offset",
           "value": 0,
-          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0"
+          "tooltip": "(Optional) Specify the count of records to skip in the results returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set to 0."
         }
       ],
       "output_schema": {
@@ -468,7 +468,7 @@
     {
       "operation": "get_vulnerability_details",
       "title": "Get Vulnerability Details",
-      "description": "Retrieves a specific vulnerability information from OTbase Inventory based on the CVE ID you have specified.",
+      "description": "Retrieves a specific vulnerability information from OTbase Inventory based on the CVE ID that you have specified.",
       "category": "investigation",
       "annotation": "get_vulnerability_details",
       "enabled": true,
@@ -476,12 +476,12 @@
         {
           "title": "CVE ID",
           "name": "cve_id",
-          "description": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from OTbase Inventory.",
+          "description": "Specify the CVE ID to retrieve its details from OTbase Inventory.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the CVE based on which you want to retrieve specific vulnerability details from OTbase Inventory."
+          "tooltip": "Specify the CVE ID to retrieve its details from OTbase Inventory."
         }
       ],
       "output_schema": {
@@ -505,7 +505,7 @@
     {
       "operation": "get_data_flow",
       "title": "Get Data Flow",
-      "description": "Retrieves a list of data flow from OTbase Inventory based on the input parameter you have specified.",
+      "description": "Retrieves a list of data flow from OTbase Inventory based on the last seen date that you have specified.",
       "category": "investigation",
       "annotation": "get_data_flow",
       "enabled": true,
@@ -513,12 +513,12 @@
         {
           "title": "Last Seen",
           "name": "last_seen",
-          "description": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp.",
+          "description": "(Optional) Select the date and time using which to filter the result set and include only those items that were last seen after the specified timestamp.",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "(Optional) Select the DateTime using which you want to filter the result set to only include only those items that have been last seen after the specified timestamp."
+          "tooltip": "(Optional) Select the date and time using which to filter the result set and include only those items that were last seen after the specified timestamp."
         }
       ],
       "output_schema": {
@@ -534,21 +534,21 @@
     {
       "operation": "get_network_list",
       "title": "Get Network List",
-      "description": "Retrieves a list of networks from OTbase Inventory based on the input parameter you have specified.",
+      "description": "Retrieves a list of networks from OTbase Inventory based on the offset that you have specified.",
       "category": "investigation",
       "annotation": "get_network_list",
       "enabled": true,
       "parameters": [
         {
           "title": "Offset",
-          "description": "(Optional) Index of the first item to be returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set as 0.",
+          "description": "(Optional) Specify the count of records to skip in the results returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set to 0.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "integer",
           "name": "offset",
           "value": 0,
-          "tooltip": "(Optional) The number of detections to skip. By default, this option is set as 0."
+          "tooltip": "(Optional) Specify the count of records to skip in the results returned by this operation. This parameter is useful for pagination and for getting a subset of items. By default, this is set to 0."
         }
       ],
       "output_schema": {
@@ -578,7 +578,7 @@
     {
       "operation": "get_network_details",
       "title": "Get Network Details",
-      "description": "Retrieves a specific network information from OTbase Inventory based on the network ID you have specified.",
+      "description": "Retrieves a specific network information from OTbase Inventory based on the network ID that you have specified.",
       "category": "investigation",
       "annotation": "get_network_details",
       "enabled": true,
@@ -586,12 +586,12 @@
         {
           "title": "Network ID",
           "name": "network_id",
-          "description": "Specify the ID of the network based on which you want to retrieve specific network details from OTbase Inventory.",
+          "description": "Specify the ID of the network to retrieve its details from OTbase Inventory",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the network based on which you want to retrieve specific network details from OTbase Inventory."
+          "tooltip": "Specify the ID of the network to retrieve its details from OTbase Inventory"
         }
       ],
       "output_schema": {
